@@ -1,0 +1,42 @@
+﻿<Window x:Class="AutokGUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AutokGUI"
+        mc:Ignorable="d"
+        Title="Autók" SizeToContent="Height" Width="400">
+    <Window.DataContext>
+        <local:MainWindowViewModel />
+    </Window.DataContext>
+    
+    <StackPanel Margin="10">
+        <Label
+            Content="Kérem, válasszon márkát!"
+            Padding="0"
+            Margin="0,0,0,10"/>
+        <ComboBox
+            ItemsSource="{Binding Makes}"
+            SelectedItem="{Binding SelectedMake}"
+            Margin="0,0,0,10"/>
+
+        <Label
+            Content="Kérem, válasszon modellt!"
+            IsEnabled="{Binding IsMakeSelected}"
+            Padding="0"
+            Margin="0,0,0,10"/>
+        <ComboBox
+            ItemsSource="{Binding AvailableModells}"
+            IsEnabled="{Binding IsMakeSelected}"
+            SelectedItem="{Binding SelectedModell}"
+            Margin="0,0,0,10"/>
+
+        <Label Content="A választott autó rendszáma" Margin="0,15"/>
+        <TextBlock
+            Text="{Binding GeneratedLicencePlate}"
+            Margin="0,15,0,30"
+            HorizontalAlignment="Center"
+            FontSize="36"
+            FontWeight="Medium"/>
+    </StackPanel>
+</Window>
