@@ -7,7 +7,7 @@ namespace AutokLib
         public int Id { get; init; }
         public string Name { get; init; }
         public DateOnly? TimeOfObtainingDriversLicense { get; init; }
-        public string Modell { get; init; }
+        public string Model { get; init; }
 
         public Owner(string line)
         {
@@ -19,7 +19,7 @@ namespace AutokLib
                 parts[2] == "Van"
                 ? DateOnly.Parse(parts[3], new CultureInfo("hu-HU"))
                 : null;
-            Modell = parts[4];
+            Model = parts[4];
         }
 
         public bool HasDriversLicense => TimeOfObtainingDriversLicense is not null;
@@ -35,9 +35,9 @@ namespace AutokLib
         public Car? Car => DataStore
             .Instance?
             .Cars
-            .FirstOrDefault(x => x.Modell == Modell);
+            .FirstOrDefault(x => x.Model == Model);
 
         public override string ToString() =>
-            $"{Name} ({Car?.Make} - {Car?.Modell}), {OwnerData?.Sex}, {OwnerData?.BirthYear}";
+            $"{Name} ({Car?.Make} - {Car?.Model}), {OwnerData?.Sex}, {OwnerData?.BirthYear}";
     }
 }

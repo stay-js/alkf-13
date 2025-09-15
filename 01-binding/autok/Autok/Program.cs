@@ -17,6 +17,7 @@ var owner = DataStore
     .Instance
     .Owners
     .FirstOrDefault(x => string.Equals(x.Name, name, StringComparison.CurrentCultureIgnoreCase));
+
 if (owner is null)
 {
     Console.WriteLine("\tIlyen néven nem található tulajdonos!");
@@ -26,7 +27,7 @@ else
     Console.WriteLine($"\tSzületési Év: {owner.OwnerData?.BirthYear}" +
         $"\n\tNév: {owner.Name}" +
         $"\n\tMárka: {owner.Car?.Make}" +
-        $"\n\tModell: {owner.Modell}" +
+        $"\n\tModell: {owner.Model}" +
         $"\n\tJogosítvány: {(owner.HasDriversLicense ? "Van" : "Nincs")}");
 }
 

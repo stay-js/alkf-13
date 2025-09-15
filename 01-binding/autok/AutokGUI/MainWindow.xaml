@@ -26,9 +26,9 @@
             Padding="0"
             Margin="0,0,0,10"/>
         <ComboBox
-            ItemsSource="{Binding AvailableModells}"
+            ItemsSource="{Binding AvailableModels}"
             IsEnabled="{Binding IsMakeSelected}"
-            SelectedItem="{Binding SelectedModell}"
+            SelectedItem="{Binding SelectedModel}"
             Margin="0,0,0,10"/>
 
         <Label Content="A választott autó rendszáma" Margin="0,15"/>

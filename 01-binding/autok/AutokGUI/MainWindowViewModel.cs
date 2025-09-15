@@ -16,14 +16,14 @@ namespace AutokGUI
             .Select(x => x.Make)
             .Distinct();
 
-        public IEnumerable<string>? AvailableModells => DataStore
+        public IEnumerable<string>? AvailableModels => DataStore
             .Instance?
             .Cars
             .Where(x => x.Make == SelectedMake)
-            .Select(x => x.Modell);
+            .Select(x => x.Model);
 
         private string? selectedMake = null;
-        private string? selectedModell = null;
+        private string? selectedModel = null;
 
         public bool IsMakeSelected => selectedMake is not null;
 
@@ -35,16 +35,16 @@ namespace AutokGUI
                 selectedMake = value;
 
                 Changed(nameof(IsMakeSelected));
-                Changed(nameof(AvailableModells));
+                Changed(nameof(AvailableModels));
             }
         }
 
-        public string? SelectedModell
+        public string? SelectedModel
         {
-            get => selectedModell;
+            get => selectedModel;
             set
             {
-                selectedModell = value;
+                selectedModel = value;
 
                 Changed(nameof(GeneratedLicencePlate));
             }
@@ -57,11 +57,11 @@ namespace AutokGUI
                 var car = DataStore
                     .Instance?
                     .Cars?
-                    .FirstOrDefault(x => x.Modell == SelectedModell);
+                    .FirstOrDefault(x => x.Model == SelectedModel);
 
                 return car is null
                     ? string.Empty
-                    : $"{car.Make[0]}{car.Modell[0]}{car.Fuel[0]}-{Random.Shared.Next(100, 999)}";
+                    : $"{car.Make[0]}{car.Model[0]}{car.Fuel[0]}-{Random.Shared.Next(100, 999)}";
             }
         }
 
