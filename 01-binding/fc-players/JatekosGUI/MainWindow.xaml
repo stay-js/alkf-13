@@ -1,0 +1,90 @@
+﻿<Window x:Class="JatekosGUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:JatekosGUI"
+        mc:Ignorable="d"
+        Title="FC Játékosok adatai" SizeToContent="Height" Width="400">
+    <Window.DataContext>
+        <local:MainWindowViewModel />
+    </Window.DataContext>
+    
+    <StackPanel Margin="10">
+        <Label
+            Content="Kérem, válasszon országot!"
+            Padding="0"
+            Margin="0,0,0,10"/>
+        <ComboBox
+            ItemsSource="{Binding Countries}"
+            SelectedItem="{Binding SelectedCountry}"
+            Margin="0,0,0,10"/>
+
+        <Label
+            Content="Kérem, válasszon játékost!"
+            IsEnabled="{Binding IsCountrySelected}"
+            Padding="0"
+            Margin="0,0,0,10"/>
+        <ComboBox
+            ItemsSource="{Binding AvailablePlayers}"
+            IsEnabled="{Binding IsCountrySelected}"
+            SelectedItem="{Binding SelectedPlayer}"
+            Margin="0,0,0,10"/>
+
+        <Grid Height="350" Visibility="{Binding CardVisibility}">
+            <Image
+                Source="images/card.png"
+                Width="200"
+                HorizontalAlignment="Center"/>
+
+            <TextBlock
+                Text="{Binding SelectedPlayer.Name}"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Margin="0,95,0,0"
+                FontSize="14"
+                FontWeight="Medium"/>
+
+            <TextBlock
+                Text="{Binding SelectedPlayer.FormattedStatsHeading}"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                FontSize="11"
+                FontWeight="Medium"
+                Margin="0,130,0,0"/>
+
+            <TextBlock
+                Text="{Binding SelectedPlayer.FormattedStats}"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                FontSize="11"
+                FontWeight="Medium"
+                Margin="0,135,0,0"/>
+
+            <TextBlock
+                Text="{Binding SelectedPlayer.AvgStat}"
+                FontSize="14"
+                FontWeight="Medium"
+                Margin="110,80,0,0"/>
+            
+            <TextBlock
+                Text="{Binding SelectedPlayer.Position}"
+                FontSize="14"
+                FontWeight="Medium"
+                Margin="110,100,0,0"/>
+
+            <Image
+                Source="{Binding SelectedPlayerPhotoPath}"
+                Width="175"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"/>
+
+            <Image
+                Source="{Binding SelectedCountryFlagPath}"
+                Width="25"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Margin="0,190,0,0"/>
+        </Grid>
+    </StackPanel>
+</Window>

@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FCPlayers", "FCPlayers\FCPlayers.csproj", "{36C721FE-EA7D-4670-AAC5-FC420A29D9F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FCPlayersLib", "FCPlayersLib\FCPlayersLib.csproj", "{781C8B98-A0EB-451B-983A-22AFADC538E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JatekosGUI", "JatekosGUI\JatekosGUI.csproj", "{040B8AC6-6843-44FC-A2CB-B1AAD78C1DC4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{36C721FE-EA7D-4670-AAC5-FC420A29D9F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36C721FE-EA7D-4670-AAC5-FC420A29D9F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36C721FE-EA7D-4670-AAC5-FC420A29D9F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36C721FE-EA7D-4670-AAC5-FC420A29D9F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{781C8B98-A0EB-451B-983A-22AFADC538E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{781C8B98-A0EB-451B-983A-22AFADC538E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{781C8B98-A0EB-451B-983A-22AFADC538E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{781C8B98-A0EB-451B-983A-22AFADC538E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{040B8AC6-6843-44FC-A2CB-B1AAD78C1DC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{040B8AC6-6843-44FC-A2CB-B1AAD78C1DC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{040B8AC6-6843-44FC-A2CB-B1AAD78C1DC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{040B8AC6-6843-44FC-A2CB-B1AAD78C1DC4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

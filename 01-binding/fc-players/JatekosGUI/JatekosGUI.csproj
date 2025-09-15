@@ -1,0 +1,137 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="images\card.png" />
+    <None Remove="images\flags\Anglia.png" />
+    <None Remove="images\flags\Brazília.png" />
+    <None Remove="images\flags\Dél-Korea.png" />
+    <None Remove="images\flags\Egyiptom.png" />
+    <None Remove="images\flags\Franciaország.png" />
+    <None Remove="images\flags\Hollandia.png" />
+    <None Remove="images\flags\Portugália.png" />
+    <None Remove="images\flags\Spanyolország.png" />
+    <None Remove="images\players\Bellingham.png" />
+    <None Remove="images\players\C Ronaldo.png" />
+    <None Remove="images\players\Capita.png" />
+    <None Remove="images\players\Casillas.png" />
+    <None Remove="images\players\Ferdinand.png" />
+    <None Remove="images\players\Foderingham.png" />
+    <None Remove="images\players\Gullit.png" />
+    <None Remove="images\players\Jairzinho.png" />
+    <None Remove="images\players\Kanté.png" />
+    <None Remove="images\players\Llorente.png" />
+    <None Remove="images\players\Matuidi.png" />
+    <None Remove="images\players\Mbappé.png" />
+    <None Remove="images\players\Neymar.png" />
+    <None Remove="images\players\Ronaldinho.png" />
+    <None Remove="images\players\Ronaldo.png" />
+    <None Remove="images\players\Saka.png" />
+    <None Remove="images\players\Salah.png" />
+    <None Remove="images\players\Sergi Roberto.png" />
+    <None Remove="images\players\Son.png" />
+    <None Remove="images\players\Van Dijk.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FCPlayersLib\FCPlayersLib.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="images\card.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\flags\Anglia.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\flags\Brazília.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\flags\Dél-Korea.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\flags\Egyiptom.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\flags\Franciaország.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\flags\Hollandia.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\flags\Portugália.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\flags\Spanyolország.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\players\Bellingham.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\players\C Ronaldo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\players\Capita.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\players\Casillas.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\players\Ferdinand.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\players\Foderingham.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\players\Gullit.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\players\Jairzinho.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\players\Kanté.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\players\Llorente.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\players\Matuidi.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\players\Mbappé.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\players\Neymar.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\players\Ronaldinho.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\players\Ronaldo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\players\Saka.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\players\Salah.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\players\Sergi Roberto.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\players\Son.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\players\Van Dijk.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+</Project>
