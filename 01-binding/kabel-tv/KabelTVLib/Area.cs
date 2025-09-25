@@ -24,5 +24,7 @@
 
             return (int)Math.Round(growth);
         }
+
+        public override string ToString() => Name;
     }
 }

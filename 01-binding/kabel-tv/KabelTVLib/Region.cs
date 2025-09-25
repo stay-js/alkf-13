@@ -17,5 +17,7 @@
             .SelectMany(x => x.Cabels)
             .Where(x => x.Year == year)
             .Sum(x => x.Subscriptions);
+
+        public override string ToString() => Name;
     }
 }
