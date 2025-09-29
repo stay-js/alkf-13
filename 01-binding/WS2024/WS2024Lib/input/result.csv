@@ -1,0 +1,143 @@
+ID;SkillID;Name;NationID;Score;Award
+1;3;Hongyu Li;12;753;Gold
+2;3;Heewon Seo;36;743;Silver
+3;3;SHOYA NOTSUMATA;33;732;Bronze
+4;3;HSUAN YI CHEN;59;720;
+5;3;Winnie Cai Ping Leow;57;710;
+6;3;Hou Wa Wong;43;707;
+7;3;Andy Tsz Yin LEUNG;24;701;
+8;3;Youva ZEMMOURA;22;700;
+9;3;Amit Kumar .;29;699;
+10;3;Norelbis Vageón;13;696;
+11;3;Pedro Lucas Alves Cavalcanti;8;685;
+12;3;Le Duy Linh;64;678;
+13;3;Ruben Hagevik Åsheim;48;673;
+14;3;Ștefan-Mario Stan;54;654;
+15;3;Dastan Talgatov;37;649;
+16;6;Zhenpeng Ma;12;743;Gold
+17;6;Jongwon Kim;36;739;Silver
+18;6;Daniel Kalisch;15;723;Bronze
+19;6;WEI HUNG LAI;59;722;Bronze
+20;6;Tomoya Hiraiwa;33;716;
+21;6;Amirreza Gholami;30;714;
+22;6;Kai Shing NG;24;704;
+23;6;Soumyaranjan Sahoo;29;696;
+24;6;OLZHAS TYNYSHTYK;37;690;
+25;6;Declan Isaac Li Heng Kuok;57;688;
+26;6;Joao Pedro Ribeiro;8;680;
+27;6;Alexis Arevalo Rozo;13;679;
+28;6;Sio Weng Leong;43;677;
+29;6;Armine Hakobyan;2;645;
+30;5;Jiahao Cao;12;756;Gold
+31;5;Jaemin Seo;36;747;Silver
+32;5;Kornél Stefán;26;726;Bronze
+33;5;Gustavo Souza;8;721;
+34;5;Besart Memeti;10;719;
+35;5;Shoma Kobayashi;33;718;
+36;5;WEI-CHENG LAI;59;710;
+37;5;Simon Brebeck;15;707;
+38;5;Mehrdad Shirvani;30;707;
+39;5;Bo Ryffel;38;705;
+40;5;Stephen Sim Shan Siong;45;701;
+41;5;Ian Wai Si;43;699;
+42;5;Ashlee Tan;57;697;
+43;5;Gautam Kumar Giri;29;694;
+44;5;Patrik Perini;25;685;
+45;5;Thomas GUILBERT;22;677;
+46;5;Santiago Luna Méndez;13;674;
+47;5;Alnur Rysbek;37;672;
+48;5;Erki Pärna;18;667;
+49;5;Kameel Maharaj;65;666;
+50;5;Narmeen Almarzooqi;1;657;
+51;5;Paul Mark Yu;50;655;
+52;7;Seungbeen Shin;36;737;Gold
+53;7;Olivér Mrakovics;26;736;Gold
+54;7;Zechariah Shen Wei Tan;57;732;Bronze
+55;7;Ruslan Yussupov;37;729;
+56;7;Lars Peder;10;725;
+57;7;Chi Tou Leong;43;723;
+58;7;Zerui Pang;12;723;
+59;7;Catalin George Tisca;54;720;
+60;7;Amirabbas Ghasemi;30;713;
+61;7;YONG-JIE FU;59;709;
+62;7;Lucas GOSGNACH;22;708;
+63;7;Pedro Lucas Câmara Rodrigues Lopes;8;708;
+64;7;Eeli Grén;21;705;
+65;7;Md Aman Khan;29;704;
+66;7;Justin Lama Perez;47;701;
+67;7;Markus Wizany;3;699;
+68;7;Hafiz Huseynov;5;696;
+69;7;Sébastien Fohr;39;690;
+70;7;Renars Gausins;40;689;
+71;7;Shunta Toda;33;688;
+72;7;Chin Wa TSE;24;686;
+73;7;Simar Singh Ubhi;9;681;
+74;7;Juan David Salazar Caviedes;13;679;
+75;7;Ezequiel Soto Seoane;19;678;
+76;7;Natanan Paenoi;58;677;
+77;7;MOUAD LAMGHARI;41;676;
+78;7;Ng Choon Fei;45;674;
+79;7;Humaid Alzadjali;1;673;
+80;7;Fernando Manuel Mora Ruiz;14;661;
+81;7;Caleb Kapa;46;657;
+82;7;Luiza Mkrtchyan;2;655;
+83;4;Favian Ahza Putra Sobar;27;746;Gold
+84;4;Kyuji Akira;33;739;Silver
+85;4;Yechan Lee;36;732;Bronze
+86;4;Zsolt Koncsik;26;731;Bronze
+87;4;HUNG-HSIANG HSUEH;59;723;
+88;4;Tian Mo;12;723;
+89;4;Stefan Tomp;3;720;
+90;4;Chi Nguyen Ho;64;714;
+91;4;Rafael Alejandro Hernandez Falla;13;714;
+92;4;Pascal Böhler;15;712;
+93;4;Finley Graham;61;704;
+94;4;Seyed Armin Taheri;30;702;
+95;4;DANIYAR ABIKENOV;37;700;
+96;4;Moisés Tamaalit Martínez;19;699;
+97;4;Dorian GIRAUD;22;697;
+98;4;Chun Ioi Chan;43;696;
+99;4;Kleber Oliveira;8;691;
+100;4;Sabrina Wen Ni Lim;57;687;
+101;4;Rasmus Hedsköld;56;685;
+102;4;Siu Fung NG;24;679;
+103;4;Leon Dragovi;25;677;
+104;4;Tauri Reinike;18;673;
+105;4;Ronald Andrés Rivera Céspedes;14;670;
+106;4;Aphiwe Mngadi;65;659;
+107;4;Tsion Adane Dinku;20;658;
+108;1;Jiajie Huang;12;845;Gold
+109;1;Hyeonmoon Jeong;36;801;Silver
+110;1;Ka Chi WAN;24;728;Bronze
+111;1;Shi Qi Phua;57;726;Bronze
+112;1;Franky Chen;59;717;
+113;1;Alireza Pourchali;30;712;
+114;1;Paul Glesmann;15;711;
+115;1;Pablo Wynistorf;10;700;
+116;1;Haruki Shioya;33;700;
+117;1;Dominik Gubrynowicz;51;700;
+118;1;Shivam Singh;29;686;
+119;1;Thiago Rocha;8;684;
+120;1;Alex Edwards;9;677;
+121;1;Timon Frey;38;667;
+122;1;Oisin Aeonn;4;655;
+123;1;Jonathan BRUNEAU;22;652;
+124;2;Edward Booth / Philippe Dourassov;10;789;Gold
+125;2;Hassan Mohammadi Moghaddam / Hamidreza Hamidi;30;764;Silver
+126;2;YU-HSIANG LIN / Li-Heng Yu;59;758;Bronze
+127;2;Jabriel Seah / Chung Wai Fong;57;748;
+128;2;Keongjoon Yim / Ryn Hur;36;732;
+129;2;Zhizan Liu / Jiacong Hong;12;727;
+130;2;Filip Brzozowski / Jakub Bliniuk;51;717;
+131;2;Sanskar Sharma / Prashant Saini;29;712;
+132;2;Rico-Andreas Lepp / Eveli Mikker;18;710;
+133;2;Thaylon Roberto Muniz da Silva / Samuel Augusto Marins Bastos;8;700;
+134;2;Chun Kit KWAN / Chiu Ngai MAN;24;697;
+135;2;Mahammadjan Mahammadjanov / Javid Jabbarli;5;695;
+136;2;Kai Baharthah-King / Lachlan Gelavis;4;692;
+137;2;Hou In Sit / Sin Teng Wong;43;690;
+138;2;Max Clarke / Arron Luker;61;690;
+139;2;Romain DEPERNE / Axel CORSIEZ;22;680;
+140;2;Mark Drinan / Luke Woodside;28;664;
+141;2;Rui Pedro Nogueira Caldas / Michel Reyter;39;630;
+142;2;Erwin Santiago Guevara Guancha / ANDRES FELIPE ORJUELA ARIAS;13;596;
