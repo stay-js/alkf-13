@@ -4,9 +4,9 @@ namespace ExtensionMethod
 {
     public static class EnumerableExtensions
     {
-        public static T MySum<T> (this IEnumerable<T> items) where T : INumber<T>
+        public static T MySum<T>(this IEnumerable<T> items) where T : INumber<T>
         {
-            T sum = T.Zero;
+            var sum = T.Zero;
 
             foreach (var item in items)
             {
@@ -19,7 +19,7 @@ namespace ExtensionMethod
         public static ReturnType MySum<T, ReturnType>(this IEnumerable<T> items, Func<T, ReturnType> selector)
             where ReturnType : INumber<ReturnType>
         {
-            ReturnType sum = ReturnType.Zero;
+            var sum = ReturnType.Zero;
 
             foreach (var item in items)
             {
@@ -31,9 +31,10 @@ namespace ExtensionMethod
 
         public static IEnumerable<T> MyWhere<T>(this IEnumerable<T> items, Predicate<T> predicate)
         {
-            foreach (var item in items)
+            foreach (var item in items.Where(x => predicate(x)))
             {
-                if (predicate(item)) yield return item;
+                yield return item;
+
             }
         }
 
@@ -45,18 +46,22 @@ namespace ExtensionMethod
             list.Sort((x, y) => x.CompareTo(y));
 
             foreach (var item in list)
+            {
                 yield return item;
+            }
         }
 
-        public static IEnumerable<T> MyOrderBy<T, TKey>(this IEnumerable<T> items, Func<T, TKey> keySelector)
+        public static IEnumerable<T> MyOrderBy<T, TKey>(this IEnumerable<T> items, Func<T, TKey> selector)
             where TKey : IComparable<TKey>
         {
             var list = new List<T>(items);
 
-            list.Sort((x, y) => keySelector(x).CompareTo(keySelector(y)));
+            list.Sort((x, y) => selector(x).CompareTo(selector(y)));
 
             foreach (var item in list)
+            {
                 yield return item;
+            }
         }
     }
 }

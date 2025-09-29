@@ -42,7 +42,6 @@ namespace WA2024GUI_NZ
                 selectedCompetitor = value;
 
                 Changed();
-                //Changed(nameof(Medal));
             }
         }
 
