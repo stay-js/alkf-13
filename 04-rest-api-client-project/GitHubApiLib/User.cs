@@ -11,5 +11,13 @@ namespace GitHubApiLib
 
         [JsonPropertyName("avatar_url")]
         public required string AvatarUrl { get; init; }
+
+        public string FormattedName => string.IsNullOrWhiteSpace(Name)
+            ? Login
+            : Name;
+
+        public string FormattedBio => string.IsNullOrWhiteSpace(Bio)
+            ? "No user bio."
+            : Bio;
     }
 }

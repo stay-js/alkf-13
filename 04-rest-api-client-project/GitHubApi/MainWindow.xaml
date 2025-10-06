@@ -41,8 +41,8 @@
             </Image>
 
             <StackPanel VerticalAlignment="Center">
-                <TextBlock Text="{Binding User.Name}" FontSize="20" FontWeight="SemiBold"/>
-                <TextBlock Text="{Binding User.Bio}" FontSize="16"/>
+                <TextBlock Text="{Binding User.FormattedName}" FontSize="20" FontWeight="SemiBold"/>
+                <TextBlock Text="{Binding User.FormattedBio}" FontSize="16"/>
             </StackPanel>
         </StackPanel>
 

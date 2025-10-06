@@ -39,12 +39,12 @@ namespace GitHubApi
             ? Visibility.Visible
             : Visibility.Hidden;
 
-        public string? TopLanguage => Repositories?
+        public string TopLanguage => Repositories?
             .Where(x => !string.IsNullOrEmpty(x.Language))
             .GroupBy(x => x.Language)
             .OrderByDescending(x => x.Count())
             .FirstOrDefault()?
-            .Key;
+            .Key ?? "No top language.";
 
         public string UserName { get; set; } = string.Empty;
 
