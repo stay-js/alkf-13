@@ -23,7 +23,8 @@ namespace GitHubApi
             {
                 if (task.Exception is not null)
                 {
-                    MessageBox.Show($"Error fetching zen message: {task.Exception.Message}");
+                    MessageBox.Show($"Error fetching Zen Message: {task.Exception.Message}");
+                    return;
                 }
 
                 ZenMessage = task.Result;
@@ -37,6 +38,15 @@ namespace GitHubApi
         public Visibility RepositoriesVisibility => Repositories is not null
             ? Visibility.Visible
             : Visibility.Hidden;
+
+        public string? TopLanguage => Repositories?
+            .Where(x => !string.IsNullOrEmpty(x.Language))
+            .GroupBy(x => x.Language)
+            .OrderByDescending(x => x.Count())
+            .FirstOrDefault()?
+            .Key;
+
+        public string UserName { get; set; } = string.Empty;
 
         public string? ZenMessage
         {
@@ -70,16 +80,6 @@ namespace GitHubApi
                 Changed(nameof(TopLanguage));
             }
         }
-
-        public string? TopLanguage => Repositories?
-            .Where(x => !string.IsNullOrEmpty(x.Language))
-            .GroupBy(x => x.Language)
-            .OrderByDescending(x => x.Count())
-            .FirstOrDefault()?
-            .Key;
-
-
-        public string UserName { get; set; } = string.Empty;
 
         public async Task LoadUserDataAsync()
         {
