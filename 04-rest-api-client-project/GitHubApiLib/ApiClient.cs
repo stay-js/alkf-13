@@ -1,6 +1,5 @@
 ﻿using System.Text.Json;
 
-
 namespace GitHubApiLib
 {
     public class ApiClient
@@ -13,7 +12,7 @@ namespace GitHubApiLib
             WriteIndented = true
         };
 
-        public async Task<T> GetAsync<T>(string endpoint)
+        public static async Task<string> GetStringAsync(string endpoint)
         {
             using var request = new HttpRequestMessage(HttpMethod.Get, "https://api.github.com" + endpoint);
 
@@ -22,7 +21,12 @@ namespace GitHubApiLib
             var response = await HttpClient.SendAsync(request);
             response.EnsureSuccessStatusCode();
 
-            string jsonResponse = await response.Content.ReadAsStringAsync();
+            return await response.Content.ReadAsStringAsync();
+        }
+
+        public async Task<T> GetAsync<T>(string endpoint)
+        {
+            string jsonResponse = await GetStringAsync(endpoint);
             return JsonSerializer.Deserialize<T>(jsonResponse, _JsonOptions)!;
         }
     }

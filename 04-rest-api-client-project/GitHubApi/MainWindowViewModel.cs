@@ -9,9 +9,9 @@ namespace GitHubApi
     {
         private readonly ApiClient _apiClient;
 
+        private string? zenMessage;
         private User? user;
         private IEnumerable<Repository>? repositories;
-        private string? zenMessage;
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
@@ -19,7 +19,7 @@ namespace GitHubApi
         {
             _apiClient = new ApiClient();
 
-            _apiClient.GetAsync<string>("/zen").ContinueWith(task =>
+            ApiClient.GetStringAsync("/zen").ContinueWith(task =>
             {
                 if (task.Exception is not null)
                 {
@@ -88,7 +88,7 @@ namespace GitHubApi
 
             try
             {
-                var userTask = _apiClient.GetAsync<User>($"/users/");
+                var userTask = _apiClient.GetAsync<User>($"/users/{UserName}");
                 var reposTask = _apiClient.GetAsync<List<Repository>>($"/users/{UserName}/repos");
 
                 await Task.WhenAll(userTask, reposTask);
