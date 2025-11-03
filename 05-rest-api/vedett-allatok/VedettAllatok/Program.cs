@@ -1,25 +1,23 @@
 using VedettAllatok.Models;
 using FastEndpoints;
+using FastEndpoints.Swagger;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddSingleton<AnimalStore>();
 
-builder.Services.AddSwaggerGen();
 builder.Services.AddOpenApi();
-builder.Services.AddFastEndpoints();
+builder.Services.AddFastEndpoints().SwaggerDocument();
 
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
-    app.UseSwagger();
-    app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+app.UseFastEndpoints().UseSwaggerGen();
 
-app.UseFastEndpoints();
+app.UseHttpsRedirection();
 
 app.Run();
