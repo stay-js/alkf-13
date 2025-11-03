@@ -1,14 +1,11 @@
 using FastEndpoints;
-using VedettAllatok.Models;
 using VedettAllatokLib;
 
 namespace VedettAllatok.Endpoints
 {
-    public class AnimalsDelete : EndpointWithoutRequest
+    public class AnimalsDelete(AnimalStore animalStore) : EndpointWithoutRequest
     {
-        private readonly AnimalStore _animalStore;
-        
-        public AnimalsDelete(AnimalStore animalStore) => _animalStore = animalStore;
+        private readonly AnimalStore _animalStore = animalStore;
 
         public override void Configure()
         {
@@ -31,7 +28,7 @@ namespace VedettAllatok.Endpoints
             }
 
             _animalStore.Delete(id);
-            
+
             await Send.StatusCodeAsync(204, ct);
         }
     }

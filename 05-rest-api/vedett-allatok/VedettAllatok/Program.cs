@@ -1,6 +1,6 @@
-using VedettAllatok.Models;
 using FastEndpoints;
 using FastEndpoints.Swagger;
+using VedettAllatokLib;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,8 +19,10 @@ if (app.Environment.IsDevelopment())
 app.UseFastEndpoints(c =>
 {
     c.Endpoints.RoutePrefix = "api";
-}).UseSwaggerGen();
+});
+
+app.UseSwaggerGen();
 
 app.UseHttpsRedirection();
 
-app.Run();
+await app.RunAsync();

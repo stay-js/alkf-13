@@ -1,14 +1,11 @@
 using FastEndpoints;
-using VedettAllatok.Models;
 using VedettAllatokLib;
 
 namespace VedettAllatok.Endpoints
 {
-    public class AnimalsAddNew : Endpoint<AnimalData>
+    public class AnimalsAddNew(AnimalStore animalStore) : Endpoint<AnimalData>
     {
-        private readonly AnimalStore _animalStore;
-        
-        public AnimalsAddNew(AnimalStore animalStore) => _animalStore = animalStore;
+        private readonly AnimalStore _animalStore = animalStore;
 
         public override void Configure()
         {

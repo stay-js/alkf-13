@@ -1,14 +1,11 @@
 using FastEndpoints;
-using VedettAllatok.Models;
 using VedettAllatokLib;
 
 namespace VedettAllatok.Endpoints
 {
-    public class AnimalsUpdate : Endpoint<AnimalData>
+    public class AnimalsUpdate(AnimalStore animalStore) : Endpoint<AnimalData>
     {
-        private readonly AnimalStore _animalStore;
-        
-        public AnimalsUpdate(AnimalStore animalStore) => _animalStore = animalStore;
+        private readonly AnimalStore _animalStore = animalStore;
 
         public override void Configure()
         {
@@ -33,8 +30,8 @@ namespace VedettAllatok.Endpoints
 
             bool isUpdated = _animalStore.Update(id, req);
             if (!isUpdated) await Send.StatusCodeAsync(500, ct);
-            
-           await Send.StatusCodeAsync(200, ct);
+
+            await Send.StatusCodeAsync(200, ct);
         }
     }
 }

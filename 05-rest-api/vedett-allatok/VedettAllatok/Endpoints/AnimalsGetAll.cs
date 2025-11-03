@@ -1,14 +1,12 @@
 using FastEndpoints;
-using VedettAllatok.Models;
 using VedettAllatokLib;
 
 namespace VedettAllatok.Endpoints
 {
-    public class AnimalsGetAll : EndpointWithoutRequest<ApiResponse<IEnumerable<Animal>>>
+    public class AnimalsGetAll(AnimalStore animalStore)
+        : EndpointWithoutRequest<ApiResponse<IEnumerable<Animal>>>
     {
-        private readonly AnimalStore _animalStore;
-        
-        public AnimalsGetAll(AnimalStore animalStore) => _animalStore = animalStore;
+        private readonly AnimalStore _animalStore = animalStore;
 
         public override void Configure()
         {
@@ -19,7 +17,7 @@ namespace VedettAllatok.Endpoints
         public override async Task HandleAsync(CancellationToken ct)
         {
             var response = _animalStore.GetAll();
-            
+
             await Send.OkAsync(CreateApiResponse.Create(response), ct);
         }
     }

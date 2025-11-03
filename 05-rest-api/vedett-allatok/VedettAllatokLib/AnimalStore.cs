@@ -1,6 +1,4 @@
-using VedettAllatokLib;
-
-namespace VedettAllatok.Models
+namespace VedettAllatokLib
 {
     public class AnimalStore
     {
@@ -11,9 +9,9 @@ namespace VedettAllatok.Models
             .ToList();
 
         public IEnumerable<Animal> GetAll() => _animals;
-        
+
         public IEnumerable<string> GetCategories() => _animals
-            .Select(x => x.Category) 
+            .Select(x => x.Category)
             .Distinct();
 
         public Animal? GetById(int id) => _animals
@@ -34,16 +32,16 @@ namespace VedettAllatok.Models
         public bool Update(int id, AnimalData animal)
         {
             int index = _animals.FindIndex(x => x.Id == id);
-            
+
             if (index != -1)
             {
                 _animals[index] = Animal.FromAnimalData(id, animal);
                 return true;
             }
-            
+
             return false;
         }
-        
+
         public void Delete(int id) => _animals.RemoveAll(x => x.Id == id);
     }
 }
