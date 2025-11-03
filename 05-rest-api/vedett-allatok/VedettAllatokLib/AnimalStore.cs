@@ -33,14 +33,11 @@ namespace VedettAllatokLib
         public bool Update(int id, AnimalData animal)
         {
             int index = _animals.FindIndex(x => x.Id == id);
+            if (index == -1) return false;
 
-            if (index != -1)
-            {
-                _animals[index] = Animal.FromAnimalData(id, animal);
-                return true;
-            }
+            _animals[index] = Animal.FromAnimalData(id, animal);
 
-            return false;
+            return true;
         }
 
         public bool Delete(int id)
