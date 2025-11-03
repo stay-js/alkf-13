@@ -14,13 +14,21 @@ namespace VedettAllatok.Endpoints
         {
             Delete("animals/{id}");
             AllowAnonymous();
+            Description(b => b
+                .Produces(204)
+                .Produces(400)
+                .Produces(404));
         }
 
         public override async Task HandleAsync(CancellationToken ct)
         {
             int id = Route<int>("id");
-            
-            if (_animalStore.GetById(id) is null) await Send.NotFoundAsync(ct);
+
+            if (_animalStore.GetById(id) is null)
+            {
+                await Send.NotFoundAsync(ct);
+                return;
+            }
 
             _animalStore.Delete(id);
             

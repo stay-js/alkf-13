@@ -14,6 +14,7 @@ namespace VedettAllatok.Endpoints
         {
             Post("animals");
             AllowAnonymous();
+            Description(b => b.Produces(201));
         }
 
         public override async Task HandleAsync(AnimalData req, CancellationToken ct)

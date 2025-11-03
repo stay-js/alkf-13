@@ -14,6 +14,9 @@ namespace VedettAllatok.Endpoints
         {
             Get("animalsByYear/{year}");
             AllowAnonymous();
+            Description(b => b
+                .Produces(200)
+                .Produces(400));
         }
 
         public override async Task HandleAsync(CancellationToken ct)

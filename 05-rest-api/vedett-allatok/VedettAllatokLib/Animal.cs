@@ -1,6 +1,6 @@
 ﻿namespace VedettAllatokLib
 {
-    public readonly record struct Animal(int Id, string Name, int Value, int Year, string Category)
+    public record Animal(int Id, string Name, int Value, int Year, string Category)
     {
         public static Animal FromCSV(string line)
         {

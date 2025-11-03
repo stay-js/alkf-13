@@ -14,12 +14,19 @@ namespace VedettAllatok.Endpoints
         {
             Get("animalsByCategory/{category}");
             AllowAnonymous();
+            Description(b => b
+                .Produces(200)
+                .Produces(400));
         }
 
         public override async Task HandleAsync(CancellationToken ct)
         {
             string? category = Route<string>("category");
-            if (string.IsNullOrEmpty(category)) ThrowError("Bad Request");
+            if (string.IsNullOrEmpty(category))
+            {
+                await Send.StatusCodeAsync(400, ct);
+                return;
+            }
             
             var response = _animalStore.GetByCategory(category);
             

@@ -17,7 +17,7 @@ namespace VedettAllatok.Models
             .Distinct();
 
         public Animal? GetById(int id) => _animals
-            .Find(animal => animal.Id == id);
+            .FirstOrDefault(animal => animal.Id == id);
 
         public IEnumerable<Animal> GetByYear(int year) => _animals
             .Where(animal => animal.Year == year);
