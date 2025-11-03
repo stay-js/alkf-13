@@ -13,7 +13,8 @@ namespace VedettAllatokLib
 
         public IEnumerable<string> GetCategories() => _animals
             .Select(x => x.Category)
-            .Distinct();
+            .Distinct()
+            .Order();
 
         public Animal? GetById(int id) => _animals
             .FirstOrDefault(animal => animal.Id == id);

@@ -1,8 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36623.8 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VedettAllatok", "VedettAllatok\VedettAllatok.csproj", "{154C6B3B-AA7B-4508-9ED4-6BB22D0230B9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VedettAllatokLib", "VedettAllatokLib\VedettAllatokLib.csproj", "{EA81827E-A457-48EF-A1EA-B44F47D2C756}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VedettAllatokCli", "VedettAllatokCli\VedettAllatokCli.csproj", "{454C013C-4BE4-42C9-B151-54B41DC8DB27}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +23,15 @@ Global
 		{EA81827E-A457-48EF-A1EA-B44F47D2C756}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EA81827E-A457-48EF-A1EA-B44F47D2C756}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EA81827E-A457-48EF-A1EA-B44F47D2C756}.Release|Any CPU.Build.0 = Release|Any CPU
+		{454C013C-4BE4-42C9-B151-54B41DC8DB27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{454C013C-4BE4-42C9-B151-54B41DC8DB27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{454C013C-4BE4-42C9-B151-54B41DC8DB27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{454C013C-4BE4-42C9-B151-54B41DC8DB27}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EEBC82F4-568D-4118-AC34-D64EB4A128AF}
 	EndGlobalSection
 EndGlobal

@@ -4,7 +4,7 @@ using VedettAllatokLib;
 namespace VedettAllatok.Endpoints
 {
     public class AnimalsGetById(AnimalStore animalStore)
-        : EndpointWithoutRequest<ApiResponse<Animal>>
+        : EndpointWithoutRequest<Animal>
     {
         private readonly AnimalStore _animalStore = animalStore;
 
@@ -29,7 +29,7 @@ namespace VedettAllatok.Endpoints
                 return;
             }
 
-            await Send.OkAsync(CreateApiResponse.Create(response), ct);
+            await Send.OkAsync(response, ct);
         }
     }
 }

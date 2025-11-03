@@ -22,6 +22,8 @@
 
         public static Animal FromAnimalData(int id, AnimalData data) =>
             new(id, data.Name, data.Value, data.Year, data.Category);
+
+        public override string ToString() => $"{Name} ({Category}) - Értéke: {Value:C0}, Védett: {Year} óta";
     }
 
     public readonly record struct AnimalData(string Name, int Value, int Year, string Category);

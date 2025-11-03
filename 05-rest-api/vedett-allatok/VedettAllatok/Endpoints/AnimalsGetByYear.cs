@@ -4,7 +4,7 @@ using VedettAllatokLib;
 namespace VedettAllatok.Endpoints
 {
     public class AnimalsGetByYear(AnimalStore animalStore)
-        : EndpointWithoutRequest<ApiResponse<IEnumerable<Animal>>>
+        : EndpointWithoutRequest<IEnumerable<Animal>>
     {
         private readonly AnimalStore _animalStore = animalStore;
 
@@ -23,7 +23,7 @@ namespace VedettAllatok.Endpoints
 
             var response = _animalStore.GetByYear(year);
 
-            await Send.OkAsync(CreateApiResponse.Create(response), ct);
+            await Send.OkAsync(response, ct);
         }
     }
 }

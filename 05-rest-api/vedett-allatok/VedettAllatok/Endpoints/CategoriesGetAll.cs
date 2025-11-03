@@ -4,7 +4,7 @@ using VedettAllatokLib;
 namespace VedettAllatok.Endpoints
 {
     public class CategoriesGetAll(AnimalStore animalStore)
-        : EndpointWithoutRequest<ApiResponse<IEnumerable<string>>>
+        : EndpointWithoutRequest<IEnumerable<string>>
     {
         private readonly AnimalStore _animalStore = animalStore;
 
@@ -18,7 +18,7 @@ namespace VedettAllatok.Endpoints
         {
             var response = _animalStore.GetCategories();
 
-            await Send.OkAsync(CreateApiResponse.Create(response), ct);
+            await Send.OkAsync(response, ct);
         }
     }
 }
