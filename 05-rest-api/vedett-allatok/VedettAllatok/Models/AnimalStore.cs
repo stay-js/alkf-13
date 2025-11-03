@@ -11,6 +11,7 @@ namespace VedettAllatok.Models
             .ToList();
 
         public IEnumerable<Animal> GetAll() => _animals;
+        
         public IEnumerable<string> GetCategories() => _animals
             .Select(x => x.Category) 
             .Distinct();
