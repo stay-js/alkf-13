@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VedettAllatok", "VedettAllatok\VedettAllatok.csproj", "{154C6B3B-AA7B-4508-9ED4-6BB22D0230B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VedettAllatokLib", "VedettAllatokLib\VedettAllatokLib.csproj", "{EA81827E-A457-48EF-A1EA-B44F47D2C756}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{154C6B3B-AA7B-4508-9ED4-6BB22D0230B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{154C6B3B-AA7B-4508-9ED4-6BB22D0230B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{154C6B3B-AA7B-4508-9ED4-6BB22D0230B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{154C6B3B-AA7B-4508-9ED4-6BB22D0230B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA81827E-A457-48EF-A1EA-B44F47D2C756}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA81827E-A457-48EF-A1EA-B44F47D2C756}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA81827E-A457-48EF-A1EA-B44F47D2C756}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA81827E-A457-48EF-A1EA-B44F47D2C756}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

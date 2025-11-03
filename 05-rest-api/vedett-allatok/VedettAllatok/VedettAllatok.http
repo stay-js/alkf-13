@@ -1,0 +1,6 @@
+@VedettAllatok_HostAddress = http://localhost:5144
+
+GET {{VedettAllatok_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
