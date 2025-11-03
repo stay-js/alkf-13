@@ -13,7 +13,7 @@ namespace VedettAllatok.Endpoints
             Get("animalsById/{id}");
             AllowAnonymous();
             Description(b => b
-                .Produces(200)
+                .Produces<Animal>(200)
                 .Produces(400)
                 .Produces(404));
         }

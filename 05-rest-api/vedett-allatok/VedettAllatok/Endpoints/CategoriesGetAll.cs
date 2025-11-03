@@ -12,6 +12,7 @@ namespace VedettAllatok.Endpoints
         {
             Get("categories");
             AllowAnonymous();
+            Description(b => b.Produces<IEnumerable<string>>(200));
         }
 
         public override async Task HandleAsync(CancellationToken ct)

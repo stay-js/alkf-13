@@ -13,7 +13,7 @@ namespace VedettAllatok.Endpoints
             Get("animalsByCategory/{category}");
             AllowAnonymous();
             Description(b => b
-                .Produces(200)
+                .Produces<IEnumerable<Animal>>(200)
                 .Produces(400));
         }
 

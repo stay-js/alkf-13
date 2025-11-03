@@ -12,6 +12,7 @@ namespace VedettAllatok.Endpoints
         {
             Get("animals");
             AllowAnonymous();
+            Description(b => b.Produces<IEnumerable<Animal>>(200));
         }
 
         public override async Task HandleAsync(CancellationToken ct)
