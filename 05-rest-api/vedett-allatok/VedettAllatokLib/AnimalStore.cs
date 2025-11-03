@@ -26,7 +26,7 @@ namespace VedettAllatokLib
 
         public void AddNew(AnimalData animal)
         {
-            int id = _animals.Select(x => x.Id).Max() + 1;
+            int id = _animals.Max(x => x.Id) + 1;
             _animals.Add(Animal.FromAnimalData(id, animal));
         }
 
