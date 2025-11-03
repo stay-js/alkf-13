@@ -8,12 +8,14 @@ var allAnimals = await api.GetAsync<IEnumerable<Animal>>("/animals");
 // innentől kezdve nem kéne Api request,
 // mivel lekértünk minden védett állatot,
 // de ebben a feladatban nyilván nem ez a lényeg...
-int highestValue = allAnimals.Max(x => x.Value);
+var highestValue = allAnimals
+    .GroupBy(x => x.Value)
+    .OrderByDescending(x => x.Key)
+    .First();
 
-Console.WriteLine($"1. feladat: Legnagyobb eszmei érték: {highestValue:C0}");
-var animalsWithHighestValue = allAnimals.Where(x => x.Value == highestValue);
-Console.WriteLine($"{highestValue:C0} eszmei értékű állatok:"
-    + string.Concat(animalsWithHighestValue.Select(x => $"\n\t- {x.Name}")));
+Console.WriteLine($"1. feladat: Legnagyobb eszmei érték: {highestValue.Key:C0}" +
+    $"\n{highestValue.Key:C0} eszmei értékű állatok:" +
+    string.Concat(highestValue.Select(x => $"\n\t- {x.Name}")));
 #endregion
 
 #region b. feladat
