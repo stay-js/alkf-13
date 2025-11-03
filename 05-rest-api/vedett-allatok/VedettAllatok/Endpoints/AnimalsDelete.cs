@@ -21,13 +21,8 @@ namespace VedettAllatok.Endpoints
         {
             int id = Route<int>("id");
 
-            if (_animalStore.GetById(id) is null)
-            {
-                await Send.NotFoundAsync(ct);
-                return;
-            }
-
-            _animalStore.Delete(id);
+            bool isDeleted = _animalStore.Delete(id);
+            if (!isDeleted) await Send.NotFoundAsync(ct);
 
             await Send.StatusCodeAsync(204, ct);
         }

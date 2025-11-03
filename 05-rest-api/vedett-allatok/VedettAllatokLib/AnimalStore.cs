@@ -43,6 +43,14 @@ namespace VedettAllatokLib
             return false;
         }
 
-        public void Delete(int id) => _animals.RemoveAll(x => x.Id == id);
+        public bool Delete(int id)
+        {
+            var animalToDelete = GetById(id);
+            if (animalToDelete is null) return false;
+
+            _animals.Remove(animalToDelete);
+
+            return true;
+        }
     }
 }
