@@ -12,19 +12,14 @@ namespace VedettAllatokCli
             WriteIndented = true
         };
 
-        public static async Task<string> GetStringAsync(string endpoint)
+        public async Task<T> GetAsync<T>(string endpoint)
         {
             using var request = new HttpRequestMessage(HttpMethod.Get, "http://localhost:5144/api" + endpoint);
 
             var response = await HttpClient.SendAsync(request);
             response.EnsureSuccessStatusCode();
 
-            return await response.Content.ReadAsStringAsync();
-        }
-
-        public async Task<T> GetAsync<T>(string endpoint)
-        {
-            string jsonResponse = await GetStringAsync(endpoint);
+            string jsonResponse = await response.Content.ReadAsStringAsync();
             return JsonSerializer.Deserialize<T>(jsonResponse, _JsonOptions)!;
         }
     }

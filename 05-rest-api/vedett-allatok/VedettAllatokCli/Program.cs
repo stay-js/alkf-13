@@ -12,7 +12,8 @@ int highestValue = allAnimals.Max(x => x.Value);
 
 Console.WriteLine($"1. feladat: Legnagyobb eszmei érték: {highestValue:C0}");
 var animalsWithHighestValue = allAnimals.Where(x => x.Value == highestValue);
-Console.WriteLine(string.Concat(animalsWithHighestValue.Select(x => $"\n\t- {x.Name}")));
+Console.WriteLine($"{highestValue:C0} eszmei értékű állatok:"
+    + string.Concat(animalsWithHighestValue.Select(x => $"\n\t- {x.Name}")));
 #endregion
 
 #region b. feladat
