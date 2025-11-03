@@ -16,7 +16,10 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
 }
 
-app.UseFastEndpoints().UseSwaggerGen();
+app.UseFastEndpoints(c =>
+{
+    c.Endpoints.RoutePrefix = "api";
+}).UseSwaggerGen();
 
 app.UseHttpsRedirection();
 

@@ -12,7 +12,7 @@ namespace VedettAllatok.Endpoints
 
         public override void Configure()
         {
-            Delete("/api/animals/{id}");
+            Delete("animals/{id}");
             AllowAnonymous();
         }
 

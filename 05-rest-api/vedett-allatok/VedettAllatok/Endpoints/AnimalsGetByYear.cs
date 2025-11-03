@@ -12,7 +12,7 @@ namespace VedettAllatok.Endpoints
 
         public override void Configure()
         {
-            Get("/api/animalsByYear/{year}");
+            Get("animalsByYear/{year}");
             AllowAnonymous();
         }
 

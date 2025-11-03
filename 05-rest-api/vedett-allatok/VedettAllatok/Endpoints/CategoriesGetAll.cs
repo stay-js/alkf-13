@@ -11,7 +11,7 @@ namespace VedettAllatok.Endpoints
 
         public override void Configure()
         {
-            Get("/api/categories");
+            Get("categories");
             AllowAnonymous();
         }
 
