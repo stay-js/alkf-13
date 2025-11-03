@@ -2,15 +2,22 @@
 {
     public record Animal(int Id, string Name, int Value, int Year, string Category)
     {
-        public static Animal FromCSV(string line)
+        public static Animal? FromCSV(string line)
         {
             string[] parts = line.Split(';');
 
-            return new Animal(int.Parse(parts[0]),
-                parts[1],
-                int.Parse(parts[2]),
-                int.Parse(parts[3]),
-                parts[4]);
+            try
+            {
+                return new Animal(int.Parse(parts[0]),
+                    parts[1],
+                    int.Parse(parts[2]),
+                    int.Parse(parts[3]),
+                    parts[4]);
+            }
+            catch
+            {
+                return null;
+            }
         }
 
         public static Animal FromAnimalData(int id, AnimalData data) =>

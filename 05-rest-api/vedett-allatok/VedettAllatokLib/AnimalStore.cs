@@ -6,6 +6,7 @@ namespace VedettAllatokLib
             .ReadAllLines("Input/vedett.csv")
             .Skip(1)
             .Select(Animal.FromCSV)
+            .OfType<Animal>()
             .ToList();
 
         public IEnumerable<Animal> GetAll() => _animals;
