@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RotaryLib", "RotaryLib\Rota
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RotaryCli", "RotaryCli\RotaryCli.csproj", "{01378608-6604-429E-9A5A-1DD985A5FF48}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RotaryGUI", "RotaryGUI\RotaryGUI.csproj", "{09C0325C-19B8-4D9D-889A-11F4C8270BF3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{01378608-6604-429E-9A5A-1DD985A5FF48}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{01378608-6604-429E-9A5A-1DD985A5FF48}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{01378608-6604-429E-9A5A-1DD985A5FF48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09C0325C-19B8-4D9D-889A-11F4C8270BF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09C0325C-19B8-4D9D-889A-11F4C8270BF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09C0325C-19B8-4D9D-889A-11F4C8270BF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09C0325C-19B8-4D9D-889A-11F4C8270BF3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
