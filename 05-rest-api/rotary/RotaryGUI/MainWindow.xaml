@@ -9,11 +9,11 @@
     <Window.DataContext>
         <local:MainWindowViewModel />
     </Window.DataContext>
-    
+
     <Window.Resources>
         <utils:GenderToBoolConverter x:Key="GenderToBoolConverter" />
     </Window.Resources>
-    
+
     <StackPanel Margin="10">
         <Label
             Content="Kérem, válasszon kategóriát!"
@@ -41,7 +41,7 @@
                     Content="Férfi"
                     IsChecked="{Binding SelectedGender, Converter={StaticResource GenderToBoolConverter}, ConverterParameter=Férfi}"
                     Margin="5" />
-                
+
                 <RadioButton
                     Content="Nő"
                     IsChecked="{Binding SelectedGender, Converter={StaticResource GenderToBoolConverter}, ConverterParameter=Nő}"
@@ -76,7 +76,7 @@
                 Grid.Column="1"
                 Text="{Binding EntryNumber}"
                 Margin="5" />
-            
+
             <Label
                 Grid.Row="1"
                 Grid.Column="0"

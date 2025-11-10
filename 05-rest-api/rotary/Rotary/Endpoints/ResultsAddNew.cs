@@ -13,7 +13,7 @@ namespace Rotary.Endpoints
             AllowAnonymous();
             Description(b => b
                 .Produces(201)
-                .Produces(400));
+                .Produces<List<string>>(400));
         }
 
         public override async Task HandleAsync(Result req, CancellationToken ct)

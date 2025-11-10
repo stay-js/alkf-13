@@ -45,7 +45,7 @@
             }
 
             if (_results.Any(x => x.Gender == result.Gender
-            && x.GenderPosition == result.GenderPosition))
+                && x.GenderPosition == result.GenderPosition))
             {
                 errors.Add("Record with this gender position already exists");
             }

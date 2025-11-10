@@ -1,14 +1,16 @@
-﻿using System.ComponentModel;
+﻿using RotaryGUI.Utils;
+using RotaryLib;
+using System.ComponentModel;
+using System.Globalization;
 using System.Runtime.CompilerServices;
 using System.Windows;
-using RotaryLib;
-using RotaryGUI.Utils;
 
 namespace RotaryGUI
 {
     class MainWindowViewModel : INotifyPropertyChanged
     {
         private readonly ApiClient _api;
+        private readonly CultureInfo _cultureInfo = new("hu-HU");
 
         private string? selectedCategory;
         private string? selectedCountryCode;
@@ -23,7 +25,7 @@ namespace RotaryGUI
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        public RelayCommand SubmitCommand { get; }
+        public RelayCommand SubmitCommand { get; init; }
 
         public IEnumerable<int>? Categories { get; set; }
         public IEnumerable<string>? CountryCodes { get; set; }
@@ -31,101 +33,61 @@ namespace RotaryGUI
         public string? SelectedCategory
         {
             get => selectedCategory;
-            set
-            {
-                selectedCategory = value;
-                Changed();
-            }
+            set => SetProperty(ref selectedCategory, value);
         }
 
         public string? SelectedCountryCode
         {
             get => selectedCountryCode;
-            set
-            {
-                selectedCountryCode = value;
-                Changed();
-            }
+            set => SetProperty(ref selectedCountryCode, value);
         }
 
         public string SelectedGender
         {
             get => selectedGender;
-            set
-            {
-                selectedGender = value;
-                Changed();
-            }
+            set => SetProperty(ref selectedGender, value);
         }
 
         public string? EntryNumber
         {
             get => entryNumber;
-            set
-            {
-                entryNumber = value;
-                Changed();
-            }
+            set => SetProperty(ref entryNumber, value);
         }
 
         public string? Position
         {
             get => position;
-            set
-            {
-                position = value;
-                Changed();
-            }
+            set => SetProperty(ref position, value);
         }
 
-        public string? BirthYear 
-        { 
+        public string? BirthYear
+        {
             get => birthYear;
-            set
-            {
-                birthYear = value;
-                Changed();
-            }
+            set => SetProperty(ref birthYear, value);
         }
 
-        public string? City 
+        public string? City
         {
             get => city;
-            set
-            {
-                city = value;
-                Changed();
-            }
+            set => SetProperty(ref city, value);
         }
 
         public string? CategoryPosition
         {
             get => categoryPosition;
-            set
-            {
-                categoryPosition = value;
-                Changed();
-            }
+            set => SetProperty(ref categoryPosition, value);
         }
 
-        public string? GenderPosition 
-        { 
+        public string? GenderPosition
+        {
             get => genderPosition;
-            set
-            {
-                genderPosition = value;
-                Changed();
-            }
+            set => SetProperty(ref genderPosition, value);
         }
 
-        public string? Time 
+        public string? Time
         {
             get => time;
-            set
-            {
-                time = value;
-                Changed();
-            }
+            set => SetProperty(ref time, value);
         }
 
         public MainWindowViewModel()
@@ -163,47 +125,31 @@ namespace RotaryGUI
         {
             var errors = new List<string>();
 
-            if (string.IsNullOrWhiteSpace(SelectedCategory)
-                || string.IsNullOrWhiteSpace(SelectedCountryCode)
-                || string.IsNullOrWhiteSpace(SelectedGender)
-                || string.IsNullOrWhiteSpace(EntryNumber)
-                || string.IsNullOrWhiteSpace(Position)
-                || string.IsNullOrWhiteSpace(BirthYear)
-                || string.IsNullOrWhiteSpace(City)
-                || string.IsNullOrWhiteSpace(CategoryPosition)
-                || string.IsNullOrWhiteSpace(GenderPosition)
-                || string.IsNullOrWhiteSpace(Time))
+            string?[] requiredFields = [
+                SelectedCategory,
+                SelectedCountryCode,
+                SelectedGender,
+                EntryNumber,
+                Position,
+                BirthYear,
+                City,
+                CategoryPosition,
+                GenderPosition,
+                Time,
+            ];
+
+            if (requiredFields.Any(string.IsNullOrWhiteSpace))
             {
                 errors.Add("Kérem töltsön ki minden mezőt!");
             }
 
-            if (!int.TryParse(EntryNumber, out _))
-            {
-                errors.Add("A rajtszám csak szám lehet!");
-            }
+            ValidateInt(EntryNumber, "rajtszám", errors);
+            ValidateInt(Position, "pozíció", errors);
+            ValidateInt(BirthYear, "születési év", errors);
+            ValidateInt(CategoryPosition, "kategóriánkénti pozíció", errors);
+            ValidateInt(GenderPosition, "nemenkénti pozíció", errors);
 
-
-            if (!int.TryParse(Position, out _))
-            {
-                errors.Add("A pozíció csak szám lehet!");
-            }
-
-            if (!int.TryParse(BirthYear, out _))
-            {
-                errors.Add("A születési év csak szám lehet!");
-            }
-
-            if (!int.TryParse(CategoryPosition, out _))
-            {
-                errors.Add("A kategóriánkénti pozíció csak szám lehet!");
-            }
-
-            if (!int.TryParse(GenderPosition, out _))
-            {
-                errors.Add("A nemenkénti pozíció csak szám lehet!");
-            }
-
-            if (!TimeOnly.TryParse(Time, out _))
+            if (!TimeOnly.TryParse(Time, _cultureInfo, out _))
             {
                 errors.Add("A futási időt a következő formátumban adja meg (hh:mm:ss)!");
             }
@@ -229,7 +175,7 @@ namespace RotaryGUI
                 CategoryPosition = int.Parse(CategoryPosition!),
                 Gender = SelectedGender,
                 GenderPosition = int.Parse(GenderPosition!),
-                Time = TimeOnly.Parse(Time!),
+                Time = TimeOnly.Parse(Time!, _cultureInfo),
             });
 
             if (result is not null)
@@ -243,6 +189,24 @@ namespace RotaryGUI
             }
 
             ResetForm();
+        }
+
+        private static void ValidateInt(string? value, string fieldName, List<string> errors)
+        {
+            if (string.IsNullOrWhiteSpace(value) || !int.TryParse(value, out _))
+            {
+                errors.Add($"A(z) {fieldName} csak szám lehet!");
+            }
+        }
+
+        private bool SetProperty<T>(ref T field, T value, [CallerMemberName] string propertyName = "")
+        {
+            if (EqualityComparer<T>.Default.Equals(field, value)) return false;
+
+            field = value;
+            Changed(propertyName);
+
+            return true;
         }
 
         private void Changed([CallerMemberName] string propertyName = "") =>

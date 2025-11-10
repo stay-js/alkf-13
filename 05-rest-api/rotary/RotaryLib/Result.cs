@@ -1,4 +1,6 @@
-﻿namespace RotaryLib
+﻿using System.Globalization;
+
+namespace RotaryLib
 {
     public record Result(int Position,
         int EntryNumber,
@@ -26,7 +28,7 @@
                     int.Parse(parts[6]),
                     parts[7],
                     int.Parse(parts[8]),
-                    TimeOnly.Parse(parts[9]));
+                    TimeOnly.Parse(parts[9], new CultureInfo("hu-HU")));
             }
             catch
             {

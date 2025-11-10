@@ -39,13 +39,13 @@ Console.WriteLine($"3.c feladat: Első női versenyző:\n{firstWomen}");
 #region 3.d
 Console.WriteLine("3.d feladat:");
 
-foreach (var category in categories)
+foreach (int category in categories.Select(x => x.Key))
 {
     var winner = allResults
-        .Where(x => x.Category == category.Key)
+        .Where(x => x.Category == category)
         .MinBy(x => x.CategoryPosition);
 
-    Console.WriteLine($"{category.Key}. kategória győztese:\n{winner}");
+    Console.WriteLine($"{category}. kategória győztese:\n{winner}");
 }
 #endregion
 
