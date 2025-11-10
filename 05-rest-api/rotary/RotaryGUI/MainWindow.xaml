@@ -9,6 +9,7 @@
     <Window.DataContext>
         <local:MainWindowViewModel />
     </Window.DataContext>
+    
     <Window.Resources>
         <utils:GenderToBoolConverter x:Key="GenderToBoolConverter" />
     </Window.Resources>
@@ -40,6 +41,7 @@
                     Content="Férfi"
                     IsChecked="{Binding SelectedGender, Converter={StaticResource GenderToBoolConverter}, ConverterParameter=Férfi}"
                     Margin="5" />
+                
                 <RadioButton
                     Content="Nő"
                     IsChecked="{Binding SelectedGender, Converter={StaticResource GenderToBoolConverter}, ConverterParameter=Nő}"
