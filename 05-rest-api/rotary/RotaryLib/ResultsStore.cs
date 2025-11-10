@@ -24,10 +24,33 @@
             .Distinct()
             .Order();
 
-        public bool AddNew(Result result)
+        public bool AddNew(Result result, out List<string> errors)
         {
-            if (_results.Any(x => x.EntryNumber == result.EntryNumber)) return false;
-            if (_results.Any(x => x.Position == result.Position)) return false;
+            errors = [];
+
+            if (_results.Any(x => x.EntryNumber == result.EntryNumber))
+            {
+                errors.Add("Record with this entry number already exists");
+            }
+
+            if (_results.Any(x => x.Position == result.Position))
+            {
+                errors.Add("Record with this position already exists");
+            }
+
+            if (_results.Any(x => x.Category == result.Category
+                && x.CategoryPosition == result.CategoryPosition))
+            {
+                errors.Add("Record with this category position already exists");
+            }
+
+            if (_results.Any(x => x.Gender == result.Gender
+            && x.GenderPosition == result.GenderPosition))
+            {
+                errors.Add("Record with this gender position already exists");
+            }
+
+            if (errors.Count > 0) return false;
 
             _results.Add(result);
             return true;

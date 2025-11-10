@@ -18,8 +18,13 @@ namespace Rotary.Endpoints
 
         public override async Task HandleAsync(Result req, CancellationToken ct)
         {
-            bool result = _resultsStore.AddNew(req);
-            await Send.StatusCodeAsync(result ? 201 : 400, ct);
+            if (!_resultsStore.AddNew(req, out var errors))
+            {
+                await Send.ResponseAsync(errors, 400, ct);
+                return;
+            }
+
+            await Send.StatusCodeAsync(201, ct);
         }
     }
 }
