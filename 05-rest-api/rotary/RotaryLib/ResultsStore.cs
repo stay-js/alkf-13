@@ -27,6 +27,7 @@
         public bool AddNew(Result result)
         {
             if (_results.Any(x => x.EntryNumber == result.EntryNumber)) return false;
+            if (_results.Any(x => x.Position == result.Position)) return false;
 
             _results.Add(result);
             return true;
