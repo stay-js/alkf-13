@@ -7,44 +7,22 @@ namespace RotaryGUI
     class MainWindowViewModel : INotifyPropertyChanged
     {
         private readonly ApiClient _api;
-        
-        private string? _selectedCategory;
-        private string? _selectedCountryCode;
-        private string _selectedGender = "Férfi";
 
         public event PropertyChangedEventHandler? PropertyChanged;
+
         public IEnumerable<int>? Categories { get; set; }
         public IEnumerable<string>? CountryCodes { get; set; }
 
-        public string? SelectedCategory
-        {
-            get => _selectedCategory;
-            set
-            {
-                _selectedCategory = value;
-                Changed();
-            }
-        }
-
-        public string? SelectedCountryCode
-        {
-            get => _selectedCountryCode;
-            set
-            {
-                _selectedCountryCode = value;
-                Changed();
-            }
-        }
-
-        public string SelectedGender
-        {
-            get => _selectedGender;
-            set
-            {
-                _selectedGender = value;
-                Changed();
-            }
-        }
+        public string? SelectedCategory { get; set; }
+        public string? SelectedCountryCode { get; set; }
+        public string SelectedGender { get; set; } = "Férfi";
+        public string? EntryNumber { get; set; }
+        public string? Position { get; set; }
+        public string? BirthYear { get; set; }
+        public string? City { get; set; }
+        public string? CategoryPosition { get; set; }
+        public string? GenderPosition { get; set; }
+        public string? Time { get; set; }
 
         public MainWindowViewModel()
         {

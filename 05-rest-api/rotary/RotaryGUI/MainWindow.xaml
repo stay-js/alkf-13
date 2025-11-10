@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RotaryGUI"
         mc:Ignorable="d"
-        Title="Rotary - Eredémy hozzáadása" Height="450" Width="800">
+        Title="Rotary - Eredémy hozzáadása" Width="500" SizeToContent="Height">
     <Window.DataContext>
         <local:MainWindowViewModel />
     </Window.DataContext>
@@ -17,22 +17,24 @@
         <Label
             Content="Kérem, válasszon kategóriát!"
             Padding="0"
-            Margin="0,0,0,5"/>
+            Margin="0,0,0,5" />
         <ComboBox
             ItemsSource="{Binding Categories}"
             SelectedItem="{Binding SelectedCategory}"
-            Margin="0,0,0,10"/>
+            Margin="0,0,0,10" />
 
         <Label
             Content="Kérem, válasszon országkódot!"
             Padding="0"
-            Margin="0,0,0,5"/>
+            Margin="0,0,0,5" />
         <ComboBox
             ItemsSource="{Binding CountryCodes}"
             SelectedItem="{Binding SelectedCountryCode}"
-            Margin="0,0,0,10"/>
+            Margin="0,0,0,10" />
 
-        <GroupBox Header="Kérem, válasszon nemet!">
+        <GroupBox
+            Header="Kérem, válasszon nemet!"
+            Margin="0,0,0,10">
             <StackPanel>
                 <RadioButton
                     Content="Férfi"
@@ -44,5 +46,108 @@
                     Margin="5" />
             </StackPanel>
         </GroupBox>
+
+        <Grid Margin="0,0,0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Label
+                Grid.Row="0"
+                Grid.Column="0"
+                Content="Rajtszám"
+                Padding="0"
+                Margin="5" />
+            <TextBox
+                Grid.Row="0"
+                Grid.Column="1"
+                Text="{Binding EntryNumber}"
+                Margin="5" />
+            
+            <Label
+                Grid.Row="1"
+                Grid.Column="0"
+                Content="Pozíció"
+                Padding="0"
+                Margin="5" />
+            <TextBox
+                Grid.Row="1"
+                Grid.Column="1"
+                Text="{Binding Position}"
+                Margin="5" />
+
+            <Label
+                Grid.Row="2"
+                Grid.Column="0"
+                Content="Születési év"
+                Padding="0"
+                Margin="5" />
+            <TextBox
+                Grid.Row="2"
+                Grid.Column="1"
+                Text="{Binding BirthYear}"
+                Margin="5" />
+
+            <Label
+                Grid.Row="3"
+                Grid.Column="0"
+                Content="Település"
+                Padding="0"
+                Margin="5" />
+            <TextBox
+                Grid.Row="3"
+                Grid.Column="1"
+                Text="{Binding City}"
+                Margin="5" />
+
+            <Label
+                Grid.Row="4"
+                Grid.Column="0"
+                Content="Kat.-ban elért helyezés"
+                Padding="0"
+                Margin="5" />
+            <TextBox
+                Grid.Row="4"
+                Grid.Column="1"
+                Text="{Binding CategoryPosition}"
+                Margin="5" />
+
+            <Label
+                Grid.Row="5"
+                Grid.Column="0"
+                Content="Nemenkénti helyezés"
+                Padding="0"
+                Margin="5" />
+            <TextBox
+                Grid.Row="5"
+                Grid.Column="1"
+                Text="{Binding GenderPosition}"
+                Margin="5" />
+
+            <Label
+                Grid.Row="6"
+                Grid.Column="0"
+                Content="Futás időtartama"
+                Padding="0"
+                Margin="5" />
+            <TextBox
+                Grid.Row="6"
+                Grid.Column="1"
+                Text="{Binding Time}"
+                Margin="5" />
+        </Grid>
+
+        <Button Content="Létrehozás" Height="30" />
     </StackPanel>
 </Window>

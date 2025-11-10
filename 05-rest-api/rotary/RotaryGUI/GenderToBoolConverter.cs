@@ -14,8 +14,7 @@ namespace RotaryGUI
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            bool isChecked = (bool)value;
-            if (isChecked) return parameter.ToString();
+            if ((bool)value) return parameter.ToString();
 
             return Binding.DoNothing;
         }
