@@ -5,28 +5,44 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RotaryGUI"
         mc:Ignorable="d"
-        Title="Rotary" Height="450" Width="800">
+        Title="Rotary - Eredémy hozzáadása" Height="450" Width="800">
     <Window.DataContext>
         <local:MainWindowViewModel />
     </Window.DataContext>
+    <Window.Resources>
+        <local:GenderToBoolConverter x:Key="GenderToBoolConverter" />
+    </Window.Resources>
     
     <StackPanel Margin="10">
         <Label
             Content="Kérem, válasszon kategóriát!"
             Padding="0"
-            Margin="0,0,0,10"/>
+            Margin="0,0,0,5"/>
         <ComboBox
             ItemsSource="{Binding Categories}"
             SelectedItem="{Binding SelectedCategory}"
             Margin="0,0,0,10"/>
 
         <Label
-            Content="Kérem, válasszon Országkódot!"
+            Content="Kérem, válasszon országkódot!"
             Padding="0"
-            Margin="0,0,0,10"/>
+            Margin="0,0,0,5"/>
         <ComboBox
             ItemsSource="{Binding CountryCodes}"
             SelectedItem="{Binding SelectedCountryCode}"
             Margin="0,0,0,10"/>
+
+        <GroupBox Header="Kérem, válasszon nemet!">
+            <StackPanel>
+                <RadioButton
+                    Content="Férfi"
+                    IsChecked="{Binding SelectedGender, Converter={StaticResource GenderToBoolConverter}, ConverterParameter=Férfi}"
+                    Margin="5" />
+                <RadioButton
+                    Content="Nő"
+                    IsChecked="{Binding SelectedGender, Converter={StaticResource GenderToBoolConverter}, ConverterParameter=Nő}"
+                    Margin="5" />
+            </StackPanel>
+        </GroupBox>
     </StackPanel>
 </Window>
