@@ -1,6 +1,8 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Windows;
 using RotaryLib;
+using RotaryGUI.Utils;
 
 namespace RotaryGUI
 {
@@ -9,6 +11,8 @@ namespace RotaryGUI
         private readonly ApiClient _api;
 
         public event PropertyChangedEventHandler? PropertyChanged;
+
+        public RelayCommand SubmitCommand { get; }
 
         public IEnumerable<int>? Categories { get; set; }
         public IEnumerable<string>? CountryCodes { get; set; }
@@ -26,6 +30,7 @@ namespace RotaryGUI
 
         public MainWindowViewModel()
         {
+            SubmitCommand = new RelayCommand(OnSubmit);
             _api = new ApiClient();
 
             _ = FetchInitialData();
@@ -38,6 +43,11 @@ namespace RotaryGUI
 
             CountryCodes = await _api.GetAsync<IEnumerable<string>>("/country-codes");
             Changed(nameof(CountryCodes));
+        }
+
+        private void OnSubmit(object? obj)
+        {
+            MessageBox.Show("submit");
         }
 
         private void Changed([CallerMemberName] string propertyName = "") =>

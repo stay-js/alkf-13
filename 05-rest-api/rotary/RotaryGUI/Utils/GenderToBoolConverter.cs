@@ -1,7 +1,7 @@
 ﻿using System.Globalization;
 using System.Windows.Data;
 
-namespace RotaryGUI
+namespace RotaryGUI.Utils
 {
     public class GenderToBoolConverter : IValueConverter
     {

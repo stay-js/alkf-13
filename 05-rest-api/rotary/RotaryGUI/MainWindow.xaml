@@ -3,14 +3,14 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:RotaryGUI"
+        xmlns:local="clr-namespace:RotaryGUI" xmlns:utils="clr-namespace:RotaryGUI.Utils"
         mc:Ignorable="d"
         Title="Rotary - Eredémy hozzáadása" Width="500" SizeToContent="Height">
     <Window.DataContext>
         <local:MainWindowViewModel />
     </Window.DataContext>
     <Window.Resources>
-        <local:GenderToBoolConverter x:Key="GenderToBoolConverter" />
+        <utils:GenderToBoolConverter x:Key="GenderToBoolConverter" />
     </Window.Resources>
     
     <StackPanel Margin="10">
@@ -148,6 +148,6 @@
                 Margin="5" />
         </Grid>
 
-        <Button Content="Létrehozás" Height="30" />
+        <Button Content="Létrehozás" Height="30" Command="{Binding SubmitCommand}" />
     </StackPanel>
 </Window>
