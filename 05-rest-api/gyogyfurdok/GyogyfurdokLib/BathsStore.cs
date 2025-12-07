@@ -19,12 +19,12 @@
 
             if (_baths.Any(x => x.Id == bath.Id))
             {
-                errors.Add("Bath with this \"ID\" already exists");
+                errors.Add("Ezzel az azonosítóval már létezik fürdő!");
             }
 
             if (_baths.Any(x => x.Name == bath.Name))
             {
-                errors.Add("Bath with this \"Name\" already exists");
+                errors.Add("Ilyen nevű fürdő már létezik!");
             }
 
             if (errors.Count > 0) return false;

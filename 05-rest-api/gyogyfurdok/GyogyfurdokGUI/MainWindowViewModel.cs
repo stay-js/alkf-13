@@ -127,7 +127,31 @@ namespace GyogyfurdokGUI
                 return;
             }
 
+            var result = await _api.PostAsync<IEnumerable<string>?>("/furdo", new
+            {
+                Id = int.Parse(Id!),
+                Name,
+                City,
+                ZipCode = int.Parse(ZipCode!),
+                County = SelectedCounty
+            });
+
+            if (result is not null)
+            {
+                MessageBox.Show(string.Join("\n", result),
+                    "Hiba",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
+
+                return;
+            }
+
             ResetForm();
+
+            MessageBox.Show("Fürdő sikeresen létrehozva",
+                "Sikeres létrehozás",
+                MessageBoxButton.OK,
+                MessageBoxImage.Information);
         }
 
         private bool SetProperty<T>(ref T field, T value, [CallerMemberName] string propertyName = "")
