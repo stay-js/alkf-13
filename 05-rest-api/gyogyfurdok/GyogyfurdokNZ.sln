@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GyogyfurdokLib", "Gyogyfurd
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GyogyfurdokCLI", "GyogyfurdokCLI\GyogyfurdokCLI.csproj", "{6CDFE541-CD25-4C03-B022-03618F19F0E1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GyogyfurdokGUI", "GyogyfurdokGUI\GyogyfurdokGUI.csproj", "{6FA998CC-BDAC-4B44-A893-51DF62CFAA94}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{6CDFE541-CD25-4C03-B022-03618F19F0E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6CDFE541-CD25-4C03-B022-03618F19F0E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6CDFE541-CD25-4C03-B022-03618F19F0E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FA998CC-BDAC-4B44-A893-51DF62CFAA94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FA998CC-BDAC-4B44-A893-51DF62CFAA94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FA998CC-BDAC-4B44-A893-51DF62CFAA94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FA998CC-BDAC-4B44-A893-51DF62CFAA94}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
