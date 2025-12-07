@@ -19,5 +19,11 @@
                 return null;
             }
         }
+
+        public override string ToString() => $"\tAzonosító: {Id}" +
+            $"\n\tNév: {Name}" +
+            $"\n\tTelepülés: {City}" +
+            $"\n\tIrányítószám: {ZipCode}" +
+            $"\n\tMegye: {County}";
     }
 }
