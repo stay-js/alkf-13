@@ -11,7 +11,7 @@ Console.WriteLine("3.a feladat: Összesen " +
 #endregion
 
 #region 3.b
-Console.Write("3.b feladat: Adjon meg egy ID-t: ");
+Console.Write("3.b feladat: Adjon meg egy azonosítót: ");
 string? id = Console.ReadLine();
 
 try
