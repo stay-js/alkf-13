@@ -10,7 +10,7 @@ namespace Gyogyfurdok.Endpoints
 
         public override void Configure()
         {
-            Get("baths");
+            Get("furdo");
             AllowAnonymous();
             Description(b => b.Produces<IEnumerable<Bath>>(200));
         }

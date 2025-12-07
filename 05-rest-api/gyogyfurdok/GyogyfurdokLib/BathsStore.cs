@@ -10,5 +10,7 @@
             .ToList();
 
         public IEnumerable<Bath> GetAll() => _baths;
+
+        public Bath? GetById(int id) => _baths.FirstOrDefault(x => x.Id == id);
     }
 }
