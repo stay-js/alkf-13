@@ -1,4 +1,5 @@
-﻿using GyogyfurdokLib;
+﻿using GyogyfurdokGUI.Utils;
+using GyogyfurdokLib;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
@@ -8,11 +9,41 @@ namespace GyogyfurdokGUI
     {
         private readonly ApiClient _api;
 
+        private string? id;
+        private string? selectedCounty;
+        private string? name;
+        private string? city;
+        private string? zipCode;
+
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        private string? selectedCounty;
+        public RelayCommand SubmitCommand { get; init; }
 
         public IEnumerable<string>? Counties { get; set; }
+
+        public string? Id
+        {
+            get => id;
+            set => SetProperty(ref id, value);
+        }
+
+        public string? Name
+        {
+            get => name;
+            set => SetProperty(ref name, value);
+        }
+
+        public string? City
+        {
+            get => city;
+            set => SetProperty(ref city, value);
+        }
+
+        public string? ZipCode
+        {
+            get => zipCode;
+            set => SetProperty(ref zipCode, value);
+        }
 
         public string? SelectedCounty
         {
