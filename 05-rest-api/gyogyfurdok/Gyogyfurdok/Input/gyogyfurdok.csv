@@ -1,0 +1,139 @@
+id;nev;telepules;irsz;megye
+1;Tősfürdő;Lakitelek;6065;Bács-Kiskun
+2;Hévízi-tó;Hévíz;8380;Zala
+3;Virágfürdő;Kaposvár;7400;Somogy
+4;Avalon Spa;Miskolctapolca;3519;Borsod-Abaúj-Zemplén
+5;Árpád Fürdő;Székesfehérvár;8000;Fejér
+6;Török Fürdő;Eger;3300;Heves
+7;Lepence Spa;Visegrád;2025;Pest
+8;Anna Gyógy-, Termál- és Élményfürdő;Szeged;6720;Csongrád-Csanád
+9;Árpád Fürdő;Békéscsaba;5600;Békés
+10;Júlia Fürdő;Nyíregyháza;4400;Szabolcs-Szatmár-Bereg
+11;Dagály Fürdő;Budapest;1138;Budapest
+12;Csiszta Fürdő;Buzsák;8695;Somogy
+13;Végardó Fürdő;Sárospatak;3950;Borsod-Abaúj-Zemplén
+14;Borbála Fürdő;Algyő;6750;Csongrád-Csanád
+15;Gyulai Várfürdő;Gyula;5700;Békés
+16;Zalakarosi Fürdő;Zalakaros;8749;Zala
+17;Demjéni Termáltó;Demjén;3395;Heves
+18;Nosztalgia Fürdő;Egerszalók;3394;Heves
+19;Igali Gyógyfürdő;Igal;7275;Somogy
+20;Rózsa Gyógyfürdő;Tótkomlós;5940;Békés
+21;Rudas Gyógyfürdő;Budapest;1013;Budapest
+22;Gödi Termálfürdő;Göd;2131;Pest
+23;Palatinus Gyógy-, Strand - és Hullámfürdő;Budapest;1007;Budapest
+24;Sá-Ra Termálfürdő;Hegykő;9437;Győr-Moson-Sopron
+25;Kastélypark Fürdő;Füzesgyarmat;5525;Békés
+26;Békési Gyógyfürdő;Békés;5630;Békés
+27;Dandár Gyógyfürdő;Budapest;1095;Budapest
+28;Király Gyógyfürdő;Budapest;1027;Budapest
+29;Gunaras Gyógyfürdő;Dombóvár;7200;Tolna
+30;Rába Quelle Gyógy-, Termál- és Élményfürdő;Győr;9025;Győr-Moson-Sopron
+31;Tamási Termálfürdő;Tamási;7090;Tolna
+32;Kamilla Gyógyfürdő;Balmazújváros;4060;Hajdú-Bihar
+33;Városi Strandfürdő;Mezőtúr;5400;Jász-Nagykun-Szolnok
+34;Gellért Gyógyfürdő;Budapest;1118;Budapest
+35;Harkányi Gyógyfürdő;Harkány;7815;Baranya
+36;Siklósi Termálfürdő;Siklós;7800;Baranya
+37;Brigetio Gyógyfürdő;Komárom;2900;Komárom-Esztergom
+38;Szarvasi Gyógyfürdő;Szarvas;5540;Békés
+39;Oázis Wellness Park;Szigetszentmiklós;2310;Pest
+40;Hatvani Strandfürdő;Hatvan;3000;Heves
+41;Gyopárosfürdő Gyógy-, Park- és Élményfürdő;Orosháza;5900;Békés
+42;Demjéni Termál Völgy;Demjén;3395;Heves
+43;Tiszaföldvári Gyógy-, és Strandfürdő;Tiszaföldvár;5430;Jász-Nagykun-Szolnok
+44;Flexum Thermal & Spa;Mosonmagyaróvár;9200;Győr-Moson-Sopron
+45;Bonyhádi Termálfürdő;Bonyhád;7150;Tolna
+46;Csurgó Városi Uszoda;Csurgó;8840;Somogy
+47;Szigetvári Gyógyfürdő;Szigetvár;7900;Baranya
+48;Kisteleki Termálfürdő;Kistelek;6760;Csongrád-Csanád
+49;Hertelendi Termálfürdő;Magyarhertelend;7394;Baranya
+50;Bükfürdő Thermal & Spa;Bük;9740;Vas
+51;Hajdúnánási Gyógyfürdő;Hajdúnánás;4080;Hajdú-Bihar
+52;Leányfalui Termálfürdő;Leányfalu;2016;Pest
+53;Kerekdombi Termálfürdő;Tiszakécske;6060;Bács-Kiskun
+54;Róna Kincse Gyógyfürdő;Kiskunfélegyháza;6100;Bács-Kiskun
+55;Makói Hagymatikum Fürdő;Makó;6900;Csongrád-Csanád
+56;Halasthermál Gyógyfürdő;Kiskunhalas;6400;Bács-Kiskun
+57;Kabai Városi Gyógyfürdő;Kaba;4183;Hajdú-Bihar
+58;Dunaföldvári Gyógyfürdő;Dunaföldvár;7020;Tolna
+59;Veresegyházi Termálfürdő;Veresegyház;2112;Pest
+60;Tiszacsegei Termálstrand;Tiszacsege;4066;Hajdú-Bihar
+61;Hungarospa Hajdúszoboszló;Hajdúszoboszló;4200;Hajdú-Bihar
+62;Kiskőrösi Rónaszéki Fürdő;Kiskőrös;6200;Bács-Kiskun
+63;Zalaegerszegi Termálfürdő;Zalaegerszeg;8900;Zala
+64;Kerekestelepi Termálfürdő, Strand és Kemping;Debrecen;4030;Hajdú-Bihar
+65;Bázakerettyei Termálfürdő;Bázakerettye;8887;Zala
+66;Sellye Városi Termálfürdő;Sellye;7960;Baranya
+67;Zalaszentgróti Termálfürdő;Zalaszentgrót;8790;Zala
+68;Miskolctapolca Barlangfürdő;Miskolctapolca;3519;Borsod-Abaúj-Zemplén
+69;Zsóry Gyógy- és Strandfürdő;Mezőkövesd;3400;Borsod-Abaúj-Zemplén
+70;Egri Termál- és Strandfürdő;Eger;3300;Heves
+71;Vulkán Gyógy és Élményfürdő;Celldömölk;9500;Vas
+72;Liget Gyógyfürdő és Kemping;Gyomaendrőd;5502;Békés
+73;Félegyházi Termál Parkfürdő;Kiskunfélegyháza;6100;Bács-Kiskun
+74;Martfű Gyógyfürdő és Uszoda;Martfű;5435;Jász-Nagykun-Szolnok
+75;Irgalmasok Veli Bej Fürdője;Budapest;1023;Budapest
+76;Lukács Gyógyfürdő és Uszoda;Budapest;1023;Budapest
+77;Barack Gyógy- és Élményfürdő;Tiszakécske;6060;Bács-Kiskun
+78;Dávodi Gyógy- és Strandfürdő;Dávod;6524;Bács-Kiskun
+79;Bocskai Strand és Gyógyfürdő;Hajdúböszörmény;4220;Hajdú-Bihar
+80;Agárdi Gyógy- és Termálfürdő;Agárd;2484;Fejér
+81;Városi Termál-és Strandfürdő;Nagyatád;7500;Somogy
+82;Thermál Strand és Gyógyfürdő;Tiszafüred;5350;Jász-Nagykun-Szolnok
+83;Paskál Gyógy- és Strandfürdő;Budapest;1141;Budapest
+84;Törökszentmiklósi Gyógyfürdő;Törökszentmiklós;5200;Jász-Nagykun-Szolnok
+85;Fedett Uszoda és Termálfürdő;Szombathely;9700;Vas
+86;Mezőcsáti Termálfürdő Strand;Mezőcsát;3450;Borsod-Abaúj-Zemplén
+87;Aquarius Élmény- és Parkfürdő;Nyíregyháza;4400;Szabolcs-Szatmár-Bereg
+88;Bogácsi Gyógy- és Strandfürdő;Bogács;3412;Borsod-Abaúj-Zemplén
+89;Lipóti Termál- és Élményfürdő;Lipót;9233;Győr-Moson-Sopron
+90;Kumánia Gyógy- és Strandfürdő;Kisújszállás;5310;Jász-Nagykun-Szolnok
+91;Kapuvári Strand és Gyógyfürdő;Kapuvár;9330;Győr-Moson-Sopron
+92;Jászapáti Tölgyes Termálfürdő;Jászapáti;5130;Jász-Nagykun-Szolnok
+93;Abonyi Termál- és Strandfürdő;Abony;2740;Pest
+94;Csongrádi Gyógyfürdő és Uszoda;Csongrád;6640;Csongrád-Csanád
+95;Túrkeve Termál- és Élményfürdő;Túrkeve;5420;Jász-Nagykun-Szolnok
+96;Mesteri Termálfürdő és Camping;Mesteri;9551;Vas
+97;Széchenyi Gyógyfürdő és Uszoda;Budapest;1146;Budapest
+98;Sárkány Wellness és Gyógyfürdő;Nyírbátor;4300;Szabolcs-Szatmár-Bereg
+99;Szuloki Termálfürdő és Camping;Szulok;7539;Somogy
+100;Bábolna Strand- és Termálfürdő;Bábolna;2943;Komárom-Esztergom
+101;Sárvári Gyógy- és Wellnessfürdő;Sárvár;9600;Vas
+102;Saliris Gyógy- és Wellnessfürdő;Egerszalók;3394;Heves
+103;Akácliget Gyógy- és Strandfürdő;Karcag;5300;Jász-Nagykun-Szolnok
+104;Aqua Land Termál és Élményfürdő;Ráckeve;2300;Pest
+105;Nagykátai Gyógy- és Strandfürdő;Nagykáta;2760;Pest
+106;Nagyatádi Termál- és Gyógyfürdő;Nagyatád;7500;Somogy
+107;Szilva Termál- és Wellnessfürdő;Vásárosnamény;4800;Szabolcs-Szatmár-Bereg
+108;Mjus World Resort & Thermal Park;Körmend;9900;Vas
+109;Aranykor Wellness és Termálfürdő;Ballószög;6035;Bács-Kiskun
+110;Demjén Piramis Fürdő és Üdülőpark;Demjén;3395;Heves
+111;Jonathermál Gyógy- és Élményfürdő;Kiskunmajsa;6120;Bács-Kiskun
+112;Liget Termálstrand és Élményfürdő;Szolnok;5000;Jász-Nagykun-Szolnok
+113;Velence Spa Termál- és Élményfürdő;Velence;2481;Fejér
+114;Berekfürdői Termál- és Strandfürdő;Berekfürdő;5309;Jász-Nagykun-Szolnok
+115;Jászberényi Strand- és Termálfürdő;Jászberény;5100;Jász-Nagykun-Szolnok
+116;Bihar Termálliget és Városi Uszoda;Berettyóújfalu;4100;Hajdú-Bihar
+117;Szent Erzsébet Mórahalmi Gyógyfürdő;Mórahalom;6782;Csongrád-Csanád
+118;Kehida Termál Gyógy- és Élményfürdő;Kehidakustány;8784;Zala
+119;Tiszaújvárosi Gyógy- és Strandfürdő;Tiszaújváros;3580;Borsod-Abaúj-Zemplén
+120;Bükkszékfürdő Gyógy- és Strandfürdő;Bükkszék;3335;Heves
+121;Sárrét Kincse Gyógy- és Strandfürdő;Püspökladány;4150;Hajdú-Bihar
+122;Szentgotthárdi Termál és Élményfürdő;Szentgotthárd;9970;Vas
+123;Dévaványai Strandfürdő és Gyógyászat;Dévaványa;5510;Békés
+124;Kalocsai Csajda Gyógyfürdő és Uszoda;Kalocsa;6300;Bács-Kiskun
+125;Paksi Gyógyászati Központ Gyógyfürdő;Paks;7030;Tolna
+126;Nagybánhegyesi Termálfürdő és Kemping;Nagybánhegyes;5668;Békés
+127;Ceglédi Gyógyfürdő és Szabadidőközpont;Cegléd;2700;Pest
+128;Barcsi Gyógyfürdő és Rekreációs Központ;Barcs;7570;Somogy
+129;Mátraderecskei Széndioxid Gyógygázfürdő;Mátraderecske;3246;Heves
+130;Jászárokszállási Termál- és Strandfürdő;Jászárokszállás;5123;Jász-Nagykun-Szolnok
+131;Csokonyavisontai Termál- és Strandfürdő;Csokonyavisonta;7555;Somogy
+132;Gyarmati Dezső Tanuszoda és Termálfürdő;Lakitelek;6065;Bács-Kiskun
+133;Földesi Termálfürdő és Szabadidőközpont;Földes;4177;Hajdú-Bihar
+134;Dr. Csépe György Uszoda és Termálstrand;Gyöngyös;3200;Heves
+135;Cserkeszőlő Fürdő és Gyógyászati Központ;Cserkeszőlő;5465;Jász-Nagykun-Szolnok
+136;Marcali Városi Fürdő és Szabadidőközpont;Marcali;8700;Somogy
+137;Aquantis Wellness- és Gyógyászati Központ;Dunaújváros;2400;Fejér
+138;Lenti Termálfürdő és Szent György Energiapark;Lenti;8960;Zala
