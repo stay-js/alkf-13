@@ -1,3 +1,4 @@
+global using FluentValidation;
 
 using FastEndpoints;
 using FastEndpoints.Swagger;

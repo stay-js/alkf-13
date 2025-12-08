@@ -77,71 +77,24 @@ namespace GyogyfurdokGUI
 
         private async void OnSubmit(object? obj)
         {
-            var errors = new List<string>();
+            var data = new BathData(Id, Name, City, ZipCode, SelectedCounty);
 
+            var validator = new BathDataValidator();
+            var result = validator.Validate(data);
 
-            string?[] requiredFields = [Id, Name, City, ZipCode, SelectedCounty];
-
-            if (requiredFields.Any(string.IsNullOrWhiteSpace))
+            if (!result.IsValid)
             {
-                errors.Add("Kérem töltsön ki minden mezőt!");
-            }
-
-            if (!int.TryParse(Id, out _))
-            {
-                errors.Add($"Az azonosító csak szám lehet!");
-            }
-
-            if (string.IsNullOrWhiteSpace(Name) || !char.IsUpper(Name[0]))
-            {
-                errors.Add($"A fürdő neve csak nagybetűvel kezdődhet!");
-            }
-
-            if (string.IsNullOrWhiteSpace(Name) || Name.Length < 5)
-            {
-                errors.Add($"A fürdő nevének minimum 5 karakterből kell állnia!");
-            }
-
-            if (string.IsNullOrWhiteSpace(City) || !char.IsUpper(City[0]))
-            {
-                errors.Add($"A település neve csak nagybetűvel kezdődhet!");
-            }
-
-            if (string.IsNullOrWhiteSpace(City) || City.Length < 2)
-            {
-                errors.Add($"A település nevének minimum 2 karakterből kell állnia!");
-            }
-
-            if (!int.TryParse(ZipCode, out int val) || val < 1000 || val > 9999)
-            {
-                errors.Add($"Az irányítószám csak négyjegyű szám lehet!");
-            }
-
-            if (errors.Count > 0)
-            {
-                MessageBox.Show(string.Join("\n", errors),
-                    "Hiba",
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Warning);
+                WarningMessageBox
+                    .Show("- " + string.Join("\n- ", result.Errors.Select(x => x.ErrorMessage)));
 
                 return;
             }
 
-            var result = await _api.PostAsync<IEnumerable<string>?>("/furdo", new
-            {
-                Id = int.Parse(Id!),
-                Name,
-                City,
-                ZipCode = int.Parse(ZipCode!),
-                County = SelectedCounty
-            });
+            var response = await _api.PostAsync<IEnumerable<string>?>("/furdo", data);
 
-            if (result is not null)
+            if (response is not null)
             {
-                MessageBox.Show(string.Join("\n", result),
-                    "Hiba",
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Warning);
+                WarningMessageBox.Show("- " + string.Join("\n- ", response));
 
                 return;
             }
