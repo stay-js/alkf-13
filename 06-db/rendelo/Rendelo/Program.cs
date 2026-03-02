@@ -25,13 +25,13 @@ else
 #endregion
 
 #region 7. feladat
-var orvosok = await db
+var osszesOrvos = await db
     .Orvosok
     .Include(x => x.Kezelesek)
     .Include(x => x.Szakterulet)
     .ToListAsync();
 
-var otLegmagasabbBeveteluOrvos = orvosok
+var otLegmagasabbBeveteluOrvos = osszesOrvos
     .OrderByDescending(x => x.Bevetel)
     .ThenBy(x => x.Nev)
     .Take(5);

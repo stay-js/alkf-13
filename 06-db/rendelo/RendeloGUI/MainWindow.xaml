@@ -6,6 +6,81 @@
         xmlns:local="clr-namespace:RendeloGUI"
         mc:Ignorable="d"
         Title="Rendelő - Orvosok adatai" Width="400" SizeToContent="Height">
-    <StackPanel>
+    <Window.DataContext>
+        <local:MainWindowViewModel />
+    </Window.DataContext>
+
+    <StackPanel Margin="10">
+        <Label
+            Content="Kérem, válasszon szakterületet!"
+            Padding="0"
+            Margin="0,0,0,5" />
+        <ComboBox
+            ItemsSource="{Binding Szakteruletek}"
+            SelectedItem="{Binding KivalasztottSzakterulet}"
+            DisplayMemberPath="Nev"
+            Margin="0,0,0,10" />
+
+        <Label
+            Content="Kérem, válasszon orvost!"
+            Padding="0"
+            Margin="0,0,0,5" />
+        <ComboBox
+            ItemsSource="{Binding ValaszthatoOrvosok}"
+            SelectedItem="{Binding KivalasztottOrvos}"
+            IsEnabled="{Binding VanKivalasztottSzakterulet}"
+            DisplayMemberPath="Nev"
+            Margin="0,0,0,10" />
+
+        <GroupBox Header="Az orvoshoz tartozó adatok" Margin="0,0,0,10">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Content="Név"
+                    Padding="0"
+                    Margin="5" />
+                <TextBox
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Text="{Binding KivalasztottOrvos.Nev}"
+                    Margin="5" />
+
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Content="Telefon"
+                    Padding="0"
+                    Margin="5" />
+                <TextBox
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Text="{Binding KivalasztottOrvos.Telefon}"
+                    Margin="5" />
+
+                <Label
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Content="Óradíj"
+                    Padding="0"
+                    Margin="5" />
+                <TextBox
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    Text="{Binding KivalasztottOrvos.Oradij}"
+                    Margin="5" />
+            </Grid>
+        </GroupBox>
     </StackPanel>
 </Window>
