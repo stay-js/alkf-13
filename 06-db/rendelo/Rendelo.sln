@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36623.8 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rendelo", "Rendelo\Rendelo.csproj", "{EE6AAD96-FB42-40A6-AF89-F88A300D75CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RendeloGUI", "RendeloGUI\RendeloGUI.csproj", "{1CAAA9FF-C443-445E-8CB8-A7EBAC53664C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RendeloLib", "RendeloLib\RendeloLib.csproj", "{3E0B1EF5-13FA-4423-94E7-E0A1D828738B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EE6AAD96-FB42-40A6-AF89-F88A300D75CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE6AAD96-FB42-40A6-AF89-F88A300D75CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE6AAD96-FB42-40A6-AF89-F88A300D75CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE6AAD96-FB42-40A6-AF89-F88A300D75CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CAAA9FF-C443-445E-8CB8-A7EBAC53664C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CAAA9FF-C443-445E-8CB8-A7EBAC53664C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CAAA9FF-C443-445E-8CB8-A7EBAC53664C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CAAA9FF-C443-445E-8CB8-A7EBAC53664C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E0B1EF5-13FA-4423-94E7-E0A1D828738B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E0B1EF5-13FA-4423-94E7-E0A1D828738B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E0B1EF5-13FA-4423-94E7-E0A1D828738B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E0B1EF5-13FA-4423-94E7-E0A1D828738B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {28547991-84E9-47CF-B449-42C4E7AC5371}
+	EndGlobalSection
+EndGlobal
