@@ -19,5 +19,7 @@
         public virtual Tanc TancNavigation { get; set; } = null!;
 
         public double Bevetel => Letszam * ((double)Hossz / 60) * SzintNavigation.Ar;
+
+        public override string ToString() => $"{Nap} {KezdoIdopont}, {Hossz} perc, {SzintNavigation.Kategoria}";
     }
 }

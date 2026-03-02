@@ -9,7 +9,8 @@ namespace TanciskolaGUI
     {
         private readonly TanciskolaContext _db;
 
-        private Tanc? kivalasztottTanc = null;
+        private Tanc? _kivalasztottTanc = null;
+        private Tanar? _kivalasztottTanar;
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
@@ -18,10 +19,11 @@ namespace TanciskolaGUI
 
         public Tanc? KivalasztottTanc
         {
-            get => kivalasztottTanc;
+            get => _kivalasztottTanc;
             set
             {
-                kivalasztottTanc = value;
+                _kivalasztottTanc = value;
+                KivalasztottTanar = null;
                 _ = TanarokFeltoltese();
                 Changed(nameof(VanKivalasztottTanc));
             }
@@ -29,7 +31,15 @@ namespace TanciskolaGUI
 
         public bool VanKivalasztottTanc => KivalasztottTanc != null;
 
-        public Tanar? KivalasztottTanar { get; set; }
+        public Tanar? KivalasztottTanar
+        {
+            get => _kivalasztottTanar;
+            set
+            {
+                _kivalasztottTanar = value;
+                Changed();
+            }
+        }
 
         public MainWindowViewModel()
         {
@@ -44,7 +54,9 @@ namespace TanciskolaGUI
             var osszesTanar = await _db
                 .Tanarok
                 .Include(x => x.OrarendTanar1Navigations)
+                    .ThenInclude(x => x.SzintNavigation)
                 .Include(x => x.OrarendTanar2Navigations)
+                    .ThenInclude(x => x.SzintNavigation)
                 .ToListAsync();
 
             Tanarok = osszesTanar

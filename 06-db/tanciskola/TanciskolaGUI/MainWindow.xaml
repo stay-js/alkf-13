@@ -31,5 +31,11 @@
             IsEnabled="{Binding VanKivalasztottTanc}"
             DisplayMemberPath="Nev"
             Margin="0,0,0,10" />
+
+        <GroupBox Header="A tánctanár órái" Margin="0,0,0,10">
+            <ListBox
+                MinHeight="300"
+                ItemsSource="{Binding KivalasztottTanar.Orak}" />
+        </GroupBox>
     </StackPanel>
 </Window>
