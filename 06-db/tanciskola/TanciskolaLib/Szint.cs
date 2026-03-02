@@ -6,6 +6,6 @@
         public string Kategoria { get; set; } = null!;
         public int Ar { get; set; }
 
-        public virtual ICollection<Orarend> Orarendek { get; set; } = new List<Orarend>();
+        public virtual ICollection<Orarend> Orarendek { get; set; } = [];
     }
 }

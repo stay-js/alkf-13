@@ -24,7 +24,7 @@ else
 #endregion
 
 #region 7. feladat
-var tanarok = await db
+var osszesTanar = await db
     .Tanarok
     .Include(t => t.OrarendTanar1Navigations)
         .ThenInclude(o => o.SzintNavigation)
@@ -32,11 +32,11 @@ var tanarok = await db
         .ThenInclude(o => o.SzintNavigation)
     .ToListAsync();
 
-var haromLegtobbetKereso = tanarok.OrderByDescending(x => x.Kereset()).Take(3);
+var haromLegtobbetKeresoTanar = osszesTanar.OrderByDescending(x => x.Kereset).Take(3);
 
 Console.WriteLine("7. feladat: A 3 legtöbbet kereső tánctanár:");
-foreach (var item in haromLegtobbetKereso)
+foreach (var item in haromLegtobbetKeresoTanar)
 {
-    Console.WriteLine($"\t{item.Nev}: {item.Kereset()} Ft");
+    Console.WriteLine($"\t{item.Nev}: {item.Kereset} Ft");
 }
 #endregion

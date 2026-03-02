@@ -1,4 +1,6 @@
-﻿namespace TanciskolaLib
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace TanciskolaLib
 {
     public partial class Tanar
     {
@@ -6,25 +8,21 @@
         public string Nev { get; set; } = null!;
         public string Email { get; set; } = null!;
 
-        public virtual ICollection<Orarend> OrarendTanar1Navigations { get; set; } = new List<Orarend>();
-        public virtual ICollection<Orarend> OrarendTanar2Navigations { get; set; } = new List<Orarend>();
+        public virtual ICollection<Orarend> OrarendTanar1Navigations { get; set; } = [];
+        public virtual ICollection<Orarend> OrarendTanar2Navigations { get; set; } = [];
 
-        public double Kereset()
+        [NotMapped]
+        public IEnumerable<Orarend> Orak
         {
-            double kereset = 0;
-
-            foreach (var orarend in OrarendTanar1Navigations)
+            get
             {
-                if (orarend.Tanar2 != null) kereset += orarend.Bevetel / 4;
-                else kereset += orarend.Bevetel / 2;
-            }
+                var orak = OrarendTanar1Navigations.ToList();
+                orak.AddRange(OrarendTanar2Navigations);
 
-            foreach (var orarend in OrarendTanar2Navigations)
-            {
-                kereset += orarend.Bevetel / 4;
+                return orak;
             }
-
-            return kereset;
         }
+
+        public double Kereset => Orak.Sum(x => x.Bevetel / (x.Tanar2 is null ? 2.0 : 4.0));
     }
 }

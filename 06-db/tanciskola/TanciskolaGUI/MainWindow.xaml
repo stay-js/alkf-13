@@ -17,7 +17,7 @@
             Margin="0,0,0,5" />
         <ComboBox
             ItemsSource="{Binding Tancok}"
-            SelectedItem="{Binding KivalaszottTanc}"
+            SelectedItem="{Binding KivalasztottTanc}"
             DisplayMemberPath="TancTipus"
             Margin="0,0,0,10" />
 
@@ -27,8 +27,8 @@
             Margin="0,0,0,5" />
         <ComboBox
             ItemsSource="{Binding Tanarok}"
-            SelectedItem="{Binding KivalszottTanar}"
-            IsEnabled="{Binding VanKivalaszottTanc}"
+            SelectedItem="{Binding KivalasztottTanar}"
+            IsEnabled="{Binding VanKivalasztottTanc}"
             DisplayMemberPath="Nev"
             Margin="0,0,0,10" />
     </StackPanel>
