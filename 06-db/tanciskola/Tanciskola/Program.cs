@@ -34,7 +34,7 @@ var tanarok = await db
 
 var haromLegtobbetKereso = tanarok.OrderByDescending(x => x.Kereset()).Take(3);
 
-Console.WriteLine("7. fealdat: A 3 legtöbbet kereső tánctanár:");
+Console.WriteLine("7. feladat: A 3 legtöbbet kereső tánctanár:");
 foreach (var item in haromLegtobbetKereso)
 {
     Console.WriteLine($"\t{item.Nev}: {item.Kereset()} Ft");
