@@ -5,8 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TanciskolaGUI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="Tánctanárok adatai" Width="400" SizeToContent="Height">
+    <Window.DataContext>
+        <local:MainWindowViewModel />
+    </Window.DataContext>
 
-    </Grid>
+    <StackPanel Margin="10">
+        <Label
+            Content="Kérem válasszon tánctípust"
+            Padding="0"
+            Margin="0,0,0,5" />
+        <ComboBox
+            ItemsSource="{Binding Tancok}"
+            SelectedItem="{Binding KivalaszottTanc}"
+            DisplayMemberPath="TancTipus"
+            Margin="0,0,0,10" />
+
+        <Label
+            Content="Kérem válasszon tánctanárt"
+            Padding="0"
+            Margin="0,0,0,5" />
+        <ComboBox
+            ItemsSource="{Binding Tanarok}"
+            SelectedItem="{Binding KivalszottTanar}"
+            IsEnabled="{Binding VanKivalaszottTanc}"
+            DisplayMemberPath="Nev"
+            Margin="0,0,0,10" />
+    </StackPanel>
 </Window>
