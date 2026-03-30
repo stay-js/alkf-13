@@ -23,6 +23,7 @@ namespace KarbantartasGUI
             set
             {
                 kivalasztottSzakterulet = value;
+                KivalasztottSzerelo = null;
 
                 _ = ValaszthatoSzerelokFeltoltese();
 
