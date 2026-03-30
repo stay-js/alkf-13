@@ -10,29 +10,45 @@
         <local:MainWindowViewModel />
     </Window.DataContext>
 
-    <StackPanel Margin="10">
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
         <Label
+            Grid.Row="0"
             Content="Kérem, válasszon szakterületet!"
             Padding="0"
-            Margin="0,0,0,5" />
+            Margin="5,5,5,0" />
         <ComboBox
+            Grid.Row="1"
             ItemsSource="{Binding Szakteruletek}"
             SelectedItem="{Binding KivalasztottSzakterulet}"
             DisplayMemberPath="Nev"
-            Margin="0,0,0,10" />
+            Margin="5" />
 
         <Label
+            Grid.Row="2"
             Content="Kérem, válasszon orvost!"
+            IsEnabled="{Binding VanKivalasztottSzakterulet}"
             Padding="0"
-            Margin="0,0,0,5" />
+            Margin="5,5,5,0" />
         <ComboBox
+            Grid.Row="3"
             ItemsSource="{Binding ValaszthatoOrvosok}"
             SelectedItem="{Binding KivalasztottOrvos}"
             IsEnabled="{Binding VanKivalasztottSzakterulet}"
             DisplayMemberPath="Nev"
-            Margin="0,0,0,10" />
+            Margin="5" />
 
-        <GroupBox Header="Az orvoshoz tartozó adatok" Margin="0,0,0,10">
+        <GroupBox
+            Grid.Row="4"
+            Header="Az orvoshoz tartozó adatok"
+            Margin="5" >
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="150" />
@@ -54,6 +70,7 @@
                 <TextBox
                     Grid.Row="0"
                     Grid.Column="1"
+                    IsReadOnly="True"
                     Text="{Binding KivalasztottOrvos.Nev}"
                     Margin="5" />
 
@@ -66,6 +83,7 @@
                 <TextBox
                     Grid.Row="1"
                     Grid.Column="1"
+                    IsReadOnly="True"
                     Text="{Binding KivalasztottOrvos.Telefon}"
                     Margin="5" />
 
@@ -78,9 +96,10 @@
                 <TextBox
                     Grid.Row="2"
                     Grid.Column="1"
+                    IsReadOnly="True"
                     Text="{Binding KivalasztottOrvos.Oradij}"
                     Margin="5" />
             </Grid>
         </GroupBox>
-    </StackPanel>
+    </Grid>
 </Window>

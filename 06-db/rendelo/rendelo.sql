@@ -1,4 +1,5 @@
-﻿CREATE DATABASE IF NOT EXISTS `rendelo`;
+﻿DROP DATABASE IF EXISTS `rendelo`;
+CREATE DATABASE IF NOT EXISTS `rendelo`;
 
 USE `rendelo`;
 

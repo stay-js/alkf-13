@@ -14,7 +14,7 @@ namespace RendeloGUI
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        public IEnumerable<Szakterulet> Szakteruletek { get; set; }
+        public IEnumerable<Szakterulet> Szakteruletek { get; set; } = [];
         public IEnumerable<Orvos> ValaszthatoOrvosok { get; set; } = [];
 
         public Szakterulet? KivalasztottSzakterulet
@@ -24,7 +24,10 @@ namespace RendeloGUI
             {
                 _kivalasztottSzakterulet = value;
                 KivalasztottOrvos = null;
+
                 _ = ValaszthatoOrvosokFeltoltese();
+
+                Changed();
                 Changed(nameof(VanKivalasztottSzakterulet));
             }
         }
@@ -44,10 +47,17 @@ namespace RendeloGUI
         public MainWindowViewModel()
         {
             _db = new();
-            Szakteruletek = _db.Szakteruletek.ToList();
+            _ = SzakteruletekFeltoltese();
         }
 
-        public async Task ValaszthatoOrvosokFeltoltese()
+
+        private async Task SzakteruletekFeltoltese()
+        {
+            Szakteruletek = await _db.Szakteruletek.ToListAsync();
+            Changed(nameof(Szakteruletek));
+        }
+
+        private async Task ValaszthatoOrvosokFeltoltese()
         {
             if (KivalasztottSzakterulet is null) return;
 
