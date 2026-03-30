@@ -12,5 +12,7 @@
         public virtual Szakterulet Szakterulet { get; set; } = null!;
 
         public virtual ICollection<Karbantartas> Karbantartasok { get; set; } = [];
+
+        public double Kereset => Karbantartasok.Sum(x => x.Ar);
     }
 }
