@@ -10,32 +10,47 @@
         <local:MainWindowViewModel />
     </Window.DataContext>
 
-    <StackPanel Margin="10">
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
         <Label
+            Grid.Row="0"
             Content="Kérem válasszon tánctípust"
             Padding="0"
-            Margin="0,0,0,5" />
+            Margin="5,5,5,0" />
         <ComboBox
+            Grid.Row="1"
             ItemsSource="{Binding Tancok}"
             SelectedItem="{Binding KivalasztottTanc}"
             DisplayMemberPath="TancTipus"
-            Margin="0,0,0,10" />
+            Margin="5" />
 
         <Label
+            Grid.Row="2"
             Content="Kérem válasszon tánctanárt"
+            IsEnabled="{Binding VanKivalasztottTanc}"
             Padding="0"
-            Margin="0,0,0,5" />
+            Margin="5,5,5,0" />
         <ComboBox
-            ItemsSource="{Binding Tanarok}"
+            Grid.Row="3"
+            ItemsSource="{Binding ValaszthatoTanarok}"
             SelectedItem="{Binding KivalasztottTanar}"
             IsEnabled="{Binding VanKivalasztottTanc}"
             DisplayMemberPath="Nev"
-            Margin="0,0,0,10" />
+            Margin="5" />
 
-        <GroupBox Header="A tánctanár órái" Margin="0,0,0,10">
-            <ListBox
-                MinHeight="300"
-                ItemsSource="{Binding KivalasztottTanar.Orak}" />
+        <GroupBox
+            Grid.Row="4"
+            Header="A tánctanár órái"
+            MinHeight="300"
+            Margin="5">
+            <ListBox ItemsSource="{Binding KivalasztottTanar.Orak}" />
         </GroupBox>
-    </StackPanel>
+    </Grid>
 </Window>

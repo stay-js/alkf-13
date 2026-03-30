@@ -10,12 +10,12 @@ namespace TanciskolaGUI
         private readonly TanciskolaContext _db;
 
         private Tanc? _kivalasztottTanc = null;
-        private Tanar? _kivalasztottTanar;
+        private Tanar? _kivalasztottTanar = null;
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        public IEnumerable<Tanc> Tancok { get; set; }
-        public IEnumerable<Tanar> Tanarok { get; set; } = [];
+        public IEnumerable<Tanc> Tancok { get; set; } = [];
+        public IEnumerable<Tanar> ValaszthatoTanarok { get; set; } = [];
 
         public Tanc? KivalasztottTanc
         {
@@ -24,12 +24,15 @@ namespace TanciskolaGUI
             {
                 _kivalasztottTanc = value;
                 KivalasztottTanar = null;
+
                 _ = TanarokFeltoltese();
+
+                Changed();
                 Changed(nameof(VanKivalasztottTanc));
             }
         }
 
-        public bool VanKivalasztottTanc => KivalasztottTanc != null;
+        public bool VanKivalasztottTanc => KivalasztottTanc is not null;
 
         public Tanar? KivalasztottTanar
         {
@@ -44,7 +47,13 @@ namespace TanciskolaGUI
         public MainWindowViewModel()
         {
             _db = new();
-            Tancok = _db.Tancok.OrderBy(x => x.TancTipus).ToList();
+            _ = TancokFeltoltese();
+        }
+
+        private async Task TancokFeltoltese()
+        {
+            Tancok = await _db.Tancok.OrderBy(x => x.TancTipus).ToListAsync();
+            Changed(nameof(Tancok));
         }
 
         private async Task TanarokFeltoltese()
@@ -59,12 +68,12 @@ namespace TanciskolaGUI
                     .ThenInclude(x => x.SzintNavigation)
                 .ToListAsync();
 
-            Tanarok = osszesTanar
+            ValaszthatoTanarok = osszesTanar
                 .Where(x => x.Orak.Any(y => y.Tanc == KivalasztottTanc.TancId))
                 .Distinct()
                 .OrderBy(x => x.Nev);
 
-            Changed(nameof(Tanarok));
+            Changed(nameof(ValaszthatoTanarok));
         }
 
         private void Changed([CallerMemberName] string propertyName = "") =>

@@ -9,8 +9,8 @@ namespace KarbantartasGUI
     {
         private readonly KarbantartasContext _db;
 
-        private Szakterulet? kivalasztottSzakterulet = null;
-        private Szerelo? kivalasztottSzerelo = null;
+        private Szakterulet? _kivalasztottSzakterulet = null;
+        private Szerelo? _kivalasztottSzerelo = null;
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
@@ -19,10 +19,10 @@ namespace KarbantartasGUI
 
         public Szakterulet? KivalasztottSzakterulet
         {
-            get => kivalasztottSzakterulet;
+            get => _kivalasztottSzakterulet;
             set
             {
-                kivalasztottSzakterulet = value;
+                _kivalasztottSzakterulet = value;
                 KivalasztottSzerelo = null;
 
                 _ = ValaszthatoSzerelokFeltoltese();
@@ -36,10 +36,10 @@ namespace KarbantartasGUI
 
         public Szerelo? KivalasztottSzerelo
         {
-            get => kivalasztottSzerelo;
+            get => _kivalasztottSzerelo;
             set
             {
-                kivalasztottSzerelo = value;
+                _kivalasztottSzerelo = value;
                 Changed();
             }
         }

@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS `tanciskola`;
 CREATE DATABASE IF NOT EXISTS `tanciskola`;
 
 USE `tanciskola`;

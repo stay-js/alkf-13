@@ -48,7 +48,7 @@
         <GroupBox
             Grid.Row="4"
             Header="Az orvoshoz tartozó adatok"
-            Margin="5" >
+            Margin="5">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="150" />

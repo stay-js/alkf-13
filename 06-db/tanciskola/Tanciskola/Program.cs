@@ -32,7 +32,9 @@ var osszesTanar = await db
         .ThenInclude(o => o.SzintNavigation)
     .ToListAsync();
 
-var haromLegtobbetKeresoTanar = osszesTanar.OrderByDescending(x => x.Kereset).Take(3);
+var haromLegtobbetKeresoTanar = osszesTanar
+    .OrderByDescending(x => x.Kereset)
+    .Take(3);
 
 Console.WriteLine("7. feladat: A 3 legtöbbet kereső tánctanár:");
 foreach (var item in haromLegtobbetKeresoTanar)
