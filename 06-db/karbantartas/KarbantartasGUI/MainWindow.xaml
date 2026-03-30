@@ -1,0 +1,56 @@
+﻿<Window x:Class="KarbantartasGUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KarbantartasGUI"
+        mc:Ignorable="d"
+        Title="Karbantartás - Szerelők adatai" Width="400" SizeToContent="Height">
+    <Window.DataContext>
+        <local:MainWindowViewModel />
+    </Window.DataContext>
+
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Label
+            Grid.Row="0"
+            Content="Kérem, válasszon szakterületet!"
+            Padding="0"
+            Margin="5,5,5,0" />
+        <ComboBox
+            Grid.Row="1"
+            ItemsSource="{Binding Szakteruletek}"
+            SelectedItem="{Binding KivalasztottSzakterulet}"
+            DisplayMemberPath="Megnevezes"
+            Margin="5" />
+
+        <Label
+            Grid.Row="2"
+            Content="Kérem, válasszon szerelőt!"
+            IsEnabled="{Binding VanKivalasztottSzakterulet}"
+            Padding="0"
+            Margin="5,5,5,0" />
+        <ComboBox
+            Grid.Row="3"
+            ItemsSource="{Binding ValaszthatoSzerelok}"
+            SelectedItem="{Binding KivalasztottSzerelo}"
+            IsEnabled="{Binding VanKivalasztottSzakterulet}"
+            DisplayMemberPath="Nev"
+            Margin="5" />
+
+        <GroupBox
+            Grid.Row="4"
+            Header="Szerelő adatai"
+            Content="{Binding KivalasztottSzerelo}"
+            MinHeight="100"
+            Padding="10,5"
+            Margin="5" />
+    </Grid>
+</Window>

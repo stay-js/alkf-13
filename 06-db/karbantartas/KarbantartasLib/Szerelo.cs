@@ -14,5 +14,9 @@
         public virtual ICollection<Karbantartas> Karbantartasok { get; set; } = [];
 
         public double Kereset => Karbantartasok.Sum(x => x.Ar);
+
+        public override string ToString() => $"Telefon: {Telefon}" +
+            $"\nCím: {Cim}" +
+            $"\nÓradíj: {Oradij} Ft";
     }
 }
