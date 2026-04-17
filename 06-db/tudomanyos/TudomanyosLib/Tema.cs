@@ -1,6 +1,6 @@
 ﻿namespace TudomanyosLib
 {
-    public partial class Temak
+    public partial class Tema
     {
         public int TemaId { get; set; }
         public string TemaNev { get; set; } = null!;

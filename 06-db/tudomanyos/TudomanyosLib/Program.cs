@@ -13,10 +13,10 @@
         public int Terem { get; set; }
         public int Letszam { get; set; }
 
-        public virtual Eloadok Eloadok1Navigation { get; set; } = null!;
-        public virtual Eloadok? Eloadok2Navigation { get; set; }
-        public virtual Szekciok SzekcioNavigation { get; set; } = null!;
-        public virtual Temak TemaNavigation { get; set; } = null!;
+        public virtual Eloado Eloadok1Navigation { get; set; } = null!;
+        public virtual Eloado? Eloadok2Navigation { get; set; }
+        public virtual Szekcio SzekcioNavigation { get; set; } = null!;
+        public virtual Tema TemaNavigation { get; set; } = null!;
 
         public double Bevetel => Letszam * (Hossz / 60.0) * SzekcioNavigation.Ar;
     }

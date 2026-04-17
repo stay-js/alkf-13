@@ -9,10 +9,10 @@ namespace TudomanyosLib
         public TudomanyosContext(DbContextOptions<TudomanyosContext> options)
             : base(options) { }
 
-        public virtual DbSet<Eloadok> Eloadok { get; set; }
+        public virtual DbSet<Eloado> Eloadok { get; set; }
         public virtual DbSet<Program> Programok { get; set; }
-        public virtual DbSet<Szekciok> Szekciok { get; set; }
-        public virtual DbSet<Temak> Temak { get; set; }
+        public virtual DbSet<Szekcio> Szekciok { get; set; }
+        public virtual DbSet<Tema> Temak { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
@@ -24,7 +24,7 @@ namespace TudomanyosLib
                 .UseCollation("utf8mb4_0900_ai_ci")
                 .HasCharSet("utf8mb4");
 
-            modelBuilder.Entity<Eloadok>(entity =>
+            modelBuilder.Entity<Eloado>(entity =>
             {
                 entity.HasKey(e => e.EloadoId).HasName("PRIMARY");
 
@@ -98,7 +98,7 @@ namespace TudomanyosLib
                     .HasConstraintName("fk_program_tema_id");
             });
 
-            modelBuilder.Entity<Szekciok>(entity =>
+            modelBuilder.Entity<Szekcio>(entity =>
             {
                 entity.HasKey(e => e.SzekcioId).HasName("PRIMARY");
 
@@ -115,7 +115,7 @@ namespace TudomanyosLib
                     .UseCollation("utf8mb3_general_ci");
             });
 
-            modelBuilder.Entity<Temak>(entity =>
+            modelBuilder.Entity<Tema>(entity =>
             {
                 entity.HasKey(e => e.TemaId).HasName("PRIMARY");
 

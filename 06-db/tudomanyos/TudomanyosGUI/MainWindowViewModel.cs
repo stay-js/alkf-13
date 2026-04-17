@@ -9,15 +9,15 @@ namespace TudomanyosGUI
     {
         private readonly TudomanyosContext _db;
 
-        private Szekciok? _kivalasztottKategoria = null;
-        private Eloadok? _kivalasztottEloado = null;
+        private Szekcio? _kivalasztottKategoria = null;
+        private Eloado? _kivalasztottEloado = null;
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        public IEnumerable<Szekciok> Kategoriak { get; set; } = [];
-        public IEnumerable<Eloadok> ValaszthatoEloadok { get; set; } = [];
+        public IEnumerable<Szekcio> Kategoriak { get; set; } = [];
+        public IEnumerable<Eloado> ValaszthatoEloadok { get; set; } = [];
 
-        public Szekciok? KivalasztottKategoria
+        public Szekcio? KivalasztottKategoria
         {
             get => _kivalasztottKategoria;
             set
@@ -34,7 +34,7 @@ namespace TudomanyosGUI
 
         public bool VanKivalasztottKategoria => KivalasztottKategoria is not null;
 
-        public Eloadok? KivalasztottEloado
+        public Eloado? KivalasztottEloado
         {
             get => _kivalasztottEloado;
             set
@@ -68,7 +68,7 @@ namespace TudomanyosGUI
         {
             if (KivalasztottKategoria is null) return;
 
-            HashSet<Eloadok> eloadok = [];
+            HashSet<Eloado> eloadok = [];
 
             foreach (var program in KivalasztottKategoria.Programok)
             {

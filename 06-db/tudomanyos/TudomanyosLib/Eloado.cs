@@ -2,7 +2,7 @@
 
 namespace TudomanyosLib
 {
-    public partial class Eloadok
+    public partial class Eloado
     {
         public int EloadoId { get; set; }
         public string Nev { get; set; } = null!;
