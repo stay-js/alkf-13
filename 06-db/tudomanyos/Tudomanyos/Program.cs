@@ -40,12 +40,12 @@ var haromLegtobbetKeresoEloado = osszesEloado
     .OrderByDescending(x => x.Kereset)
     .Take(3);
 
+Console.WriteLine("7. feladat: A 3 legtöbbet kereső előadó:");
+
 /**
  * Hibás a minta, mert csak azokat az előadásokat veszi figyelembe,
- * ahol az előadó, előadó1-ként szerepel, ahol előadó2-ként azokat nem.
+ * ahol az előadó Eloadok1-ként szerepel.
  **/
-
-Console.WriteLine("7. feladat: A 3 legtöbbet kereső előadó:");
 foreach (var item in haromLegtobbetKeresoEloado)
 {
     Console.WriteLine($"\t{item.Nev} - {item.Kereset} Ft");

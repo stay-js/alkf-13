@@ -1,4 +1,6 @@
-﻿namespace TudomanyosLib
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace TudomanyosLib
 {
     public partial class Program
     {
@@ -18,6 +20,7 @@
         public virtual Szekcio SzekcioNavigation { get; set; } = null!;
         public virtual Tema TemaNavigation { get; set; } = null!;
 
+        [NotMapped]
         public double Bevetel => Letszam * (Hossz / 60.0) * SzekcioNavigation.Ar;
     }
 }

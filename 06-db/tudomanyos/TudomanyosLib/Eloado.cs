@@ -23,6 +23,7 @@ namespace TudomanyosLib
             }
         }
 
+        [NotMapped]
         public double Kereset => Programok.Sum(x => x.Bevetel / (x.Eloadok2 is null ? 2.0 : 4.0));
     }
 }
