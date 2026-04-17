@@ -80,7 +80,7 @@ namespace TudomanyosGUI
                 }
             }
 
-            ValaszthatoEloadok = eloadok;
+            ValaszthatoEloadok = eloadok.OrderBy(x => x.Nev);
 
             Changed(nameof(ValaszthatoEloadok));
         }

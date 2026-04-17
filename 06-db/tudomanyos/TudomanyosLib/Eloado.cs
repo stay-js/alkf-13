@@ -19,7 +19,7 @@ namespace TudomanyosLib
                 var programok = ProgramEloadok1Navigations.ToList();
                 programok.AddRange(ProgramEloadok2Navigations);
 
-                return programok;
+                return programok.OrderBy(x => x.Datum);
             }
         }
 
