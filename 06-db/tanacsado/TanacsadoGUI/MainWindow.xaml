@@ -1,0 +1,104 @@
+﻿<Window x:Class="TanacsadoGUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TanacsadoGUI"
+        mc:Ignorable="d"
+        Title="Tanácsadók adatai" Width="450" SizeToContent="Height">
+    <Window.DataContext>
+        <local:MainWindowViewModel />
+    </Window.DataContext>
+
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Label
+            Grid.Row="0"
+            Margin="5,5,5,0"
+            Padding="0"
+            Content="Kérem, válasszon szakterületet!" />
+
+        <ComboBox
+            Grid.Row="1"
+            Margin="5"
+            ItemsSource="{Binding Szakteruletek}"
+            SelectedItem="{Binding KivalasztottSzakterulet}"
+            DisplayMemberPath="Megnevezes" />
+
+        <Label
+            Grid.Row="2"
+            Margin="5,5,5,0"
+            Padding="0"
+            Content="Kérem, válasszon tanácsadót!"
+            IsEnabled="{Binding VanKivalasztottSzakterulet}" />
+
+        <ComboBox
+            Grid.Row="3"
+            Margin="5"
+            ItemsSource="{Binding ValaszthatoTanacsadok}"
+            SelectedItem="{Binding KivalasztottTanacsado}"
+            IsEnabled="{Binding VanKivalasztottSzakterulet}"
+            DisplayMemberPath="Nev" />
+
+        <GroupBox Grid.Row="4" Margin="5" Header="A tanácsadó adatai">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="125" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Margin="5"
+                    Padding="0"
+                    Content="Telefon" />
+                <TextBox
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Margin="5"
+                    IsReadOnly="True"
+                    Text="{Binding KivalasztottTanacsado.Telefon}" />
+
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Margin="5"
+                    Padding="0"
+                    Content="E-mail" />
+                <TextBox
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Margin="5"
+                    IsReadOnly="True"
+                    Text="{Binding KivalasztottTanacsado.Email}" />
+
+                <Label
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Margin="5"
+                    Padding="0"
+                    Content="Szakterület" />
+                <TextBox
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    Margin="5"
+                    IsReadOnly="True"
+                    Text="{Binding KivalasztottTanacsado.Szakterulet.Megnevezes}" />
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>
